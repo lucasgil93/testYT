@@ -14,7 +14,7 @@ function Navbar() {
                         </div>
                     </a>
                     <ul className="items-stretch hidden space-x-3 lg:flex ">
-                        <li><h1 className="text-black uppercase text-4xl font-bold m-3"><span>S</span>akura <span>S</span>u<span>s</span>hi</h1></li>
+                        <li><a rel="noopener noreferrer" href="/" aria-label="Back to homepage" ><h1 className="text-black uppercase text-4xl font-bold m-3"><span>S</span>akura <span>S</span>u<span>s</span>hi</h1></a></li>
 
                         <li className="flex">
                             <a rel="noopener noreferrer" href="reserve" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">RESERVATION</a>
@@ -26,7 +26,7 @@ function Navbar() {
                             <a rel="noopener noreferrer" href="about" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">ABOUT</a>
                         </li>
                         <li className="flex">
-                            <a rel="noopener noreferrer" href="connect" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">CONNECT</a>
+                            <a rel="noopener noreferrer" href="reviews" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">REVIEWS</a>
                         </li>
                     </ul>
                 </div>

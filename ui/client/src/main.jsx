@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     element: <Reserve />,
   },
   {
-    path: "connect",
+    path: "reviews",
     element: <Connect />,
   },
   {

@@ -14,7 +14,6 @@ function ReviewModal({ onClose }) {
     const API_URL = "http://localhost:5038/";
 
     const handleSubmit = async () => {
-
         const showWarn = (msg) => {
             toast.current.show({ severity: 'warn', summary: 'Warning', detail: msg, life: 3000 });
         }
@@ -40,14 +39,13 @@ function ReviewModal({ onClose }) {
                 method: "POST",
                 body: data,
             });
+
             if (response.ok) {
-                setFormData({
-                    name: "",
-                    date: "",
-                    time: "",
-                    numberOfPersons: ""
-                });
                 showSuccess('Review made successfully');
+                setName("");
+                setText("");
+                setRating(0);
+                onClose();  // Close the modal after submitting
             } else {
                 throw new Error("Failed to make the review");
             }
@@ -55,7 +53,6 @@ function ReviewModal({ onClose }) {
             console.error("Error submitting review:", error);
             showError("There was an error submitting your review. Please try again.");
         }
-        onClose();  // Close the modal after submitting
     };
 
     return (

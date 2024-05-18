@@ -59,7 +59,7 @@ function Footer() {
                     </div>
 
                     <div className="space-y-3">
-                        <div className="uppercase dark:text-gray-900">Connect With Us</div>
+                        <div className="uppercase dark:text-gray-900">Reviews</div>
                         <div className="flex justify-start space-x-3">
                             <a rel="noopener noreferrer" href="#" title="Facebook" className="flex items-center p-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 32 32" className="w-5 h-5 fill-current">
