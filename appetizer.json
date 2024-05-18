@@ -1,0 +1,104 @@
+[
+    {
+        "id": 35,
+        "name": "Edamame",
+        "category": "Appetizer",
+        "area": "Japanese",
+        "image": "https://www.themealdb.com/images/media/meals/txsupu1511815755.jpg",
+        "tags": null,
+        "ingredients": [
+            "Edamame Beans",
+            "Sea Salt"
+        ],
+        "allergens": [
+            "Soy"
+        ],
+        "price": 4.99
+    },
+    {
+        "id": 36,
+        "name": "Gyoza",
+        "category": "Appetizer",
+        "area": "Japanese",
+        "image": "https://www.themealdb.com/images/media/meals/pyywsw1525963420.jpg",
+        "tags": null,
+        "ingredients": [
+            "Ground Pork",
+            "Cabbage",
+            "Garlic",
+            "Ginger",
+            "Soy Sauce",
+            "Dumpling Wrappers"
+        ],
+        "allergens": [
+            "Pork",
+            "Soy",
+            "Gluten"
+        ],
+        "price": 6.99
+    },
+    {
+        "id": 37,
+        "name": "Tempura",
+        "category": "Appetizer",
+        "area": "Japanese",
+        "image": "https://www.themealdb.com/images/media/meals/rxuxwy1511795040.jpg",
+        "tags": null,
+        "ingredients": [
+            "Shrimp",
+            "Flour",
+            "Egg",
+            "Cold Water",
+            "Vegetables",
+            "Tempura Sauce"
+        ],
+        "allergens": [
+            "Shellfish",
+            "Egg",
+            "Gluten"
+        ],
+        "price": 8.99
+    },
+    {
+        "id": 38,
+        "name": "Yakitori",
+        "category": "Appetizer",
+        "area": "Japanese",
+        "image": "https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg",
+        "tags": null,
+        "ingredients": [
+            "Chicken",
+            "Soy Sauce",
+            "Sake",
+            "Mirin",
+            "Sugar",
+            "Green Onions"
+        ],
+        "allergens": [
+            "Soy"
+        ],
+        "price": 7.49
+    },
+    {
+        "id": 39,
+        "name": "Spring Rolls",
+        "category": "Appetizer",
+        "area": "Asian",
+        "image": "https://www.themealdb.com/images/media/meals/sywrsu1511463066.jpg",
+        "tags": null,
+        "ingredients": [
+            "Rice Paper",
+            "Shrimp",
+            "Vermicelli",
+            "Lettuce",
+            "Mint",
+            "Cilantro",
+            "Carrot",
+            "Cucumber"
+        ],
+        "allergens": [
+            "Shellfish"
+        ],
+        "price": 6.49
+    }
+]

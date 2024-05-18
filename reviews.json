@@ -1,0 +1,194 @@
+[
+    {
+        "id": 1,
+        "name": "Alice",
+        "text": "The sushi was fresh and delicious! Highly recommend the sashimi platter.",
+        "rating": 5
+    },
+    {
+        "id": 2,
+        "name": "Bob",
+        "text": "Great ambiance and friendly staff. The ramen was a bit too salty for my taste.",
+        "rating": 3
+    },
+    {
+        "id": 3,
+        "name": "Charlie",
+        "text": "Absolutely loved the tempura! Crispy and light, just perfect.",
+        "rating": 4
+    },
+    {
+        "id": 4,
+        "name": "Danielle",
+        "text": "The green tea ice cream was a delightful end to a fantastic meal.",
+        "rating": 5
+    },
+    {
+        "id": 5,
+        "name": "Evan",
+        "text": "Good food but the service was a bit slow during peak hours.",
+        "rating": 3
+    },
+    {
+        "id": 6,
+        "name": "Fiona",
+        "text": "The matcha latte is a must-try! Authentic and flavorful.",
+        "rating": 4
+    },
+    {
+        "id": 7,
+        "name": "George",
+        "text": "I enjoyed the gyoza and miso soup. Will definitely come back!",
+        "rating": 4
+    },
+    {
+        "id": 8,
+        "name": "Hannah",
+        "text": "The onigiri was okay, but I've had better elsewhere.",
+        "rating": 2
+    },
+    {
+        "id": 9,
+        "name": "Isabella",
+        "text": "The tempura was fantastic, and the dipping sauce complemented it perfectly.",
+        "rating": 5
+    },
+    {
+        "id": 10,
+        "name": "Jack",
+        "text": "Enjoyed the variety in the sushi platter, but the rice was a bit dry.",
+        "rating": 3
+    },
+    {
+        "id": 11,
+        "name": "Karen",
+        "text": "The atmosphere was cozy and welcoming. The miso soup was exceptional.",
+        "rating": 4
+    },
+    {
+        "id": 12,
+        "name": "Liam",
+        "text": "The ramen had a rich, flavorful broth and tender noodles. Will come again!",
+        "rating": 5
+    },
+    {
+        "id": 13,
+        "name": "Mia",
+        "text": "The matcha ice cream was smooth and not too sweet. A perfect dessert!",
+        "rating": 5
+    },
+    {
+        "id": 14,
+        "name": "Nathan",
+        "text": "The yakitori was tasty but could use more seasoning.",
+        "rating": 3
+    },
+    {
+        "id": 15,
+        "name": "Olivia",
+        "text": "Loved the edamame! Fresh and perfectly salted.",
+        "rating": 4
+    },
+    {
+        "id": 16,
+        "name": "Paul",
+        "text": "Service was excellent, and the sake was of high quality.",
+        "rating": 4
+    },
+    {
+        "id": 17,
+        "name": "Quinn",
+        "text": "The gyoza were crispy on the outside and juicy on the inside. Delicious!",
+        "rating": 5
+    },
+    {
+        "id": 18,
+        "name": "Rachel",
+        "text": "The sushi was just okay. I've had better in other places.",
+        "rating": 2
+    },
+    {
+        "id": 19,
+        "name": "Sam",
+        "text": "The ramen was good, but the pork could have been more tender.",
+        "rating": 3
+    },
+    {
+        "id": 20,
+        "name": "Tina",
+        "text": "The anmitsu was a delightful treat. Very refreshing!",
+        "rating": 5
+    },
+    {
+        "id": 21,
+        "name": "John",
+        "text": "I absolutely loved the sushi here. It was fresh and delicious!",
+        "rating": 4
+    },
+    {
+        "id": 22,
+        "name": "Emily",
+        "text": "The ramen was amazing! The broth was so flavorful.",
+        "rating": 5
+    },
+    {
+        "id": 23,
+        "name": "Michael",
+        "text": "I tried the tempura and it was fantastic. Crispy and not greasy at all.",
+        "rating": 5
+    },
+    {
+        "id": 24,
+        "name": "Sarah",
+        "text": "The matcha ice cream was the perfect ending to my meal. Creamy and not too sweet.",
+        "rating": 5
+    },
+    {
+        "id": 25,
+        "name": "David",
+        "text": "The bento box was a great value for money. So many delicious items!",
+        "rating": 4
+    },
+    {
+        "id": 26,
+        "name": "Jessica",
+        "text": "The gyoza were so tasty! I could eat them all day.",
+        "rating": 5
+    },
+    {
+        "id": 27,
+        "name": "Alex",
+        "text": "The chirashi bowl was beautifully presented and tasted even better than it looked!",
+        "rating": 5
+    },
+    {
+        "id": 28,
+        "name": "Sophia",
+        "text": "The yakitori skewers were grilled to perfection. Each bite was flavorful and juicy.",
+        "rating": 4
+    },
+    {
+        "id": 29,
+        "name": "Daniel",
+        "text": "The udon noodles were so comforting. Exactly what I needed on a chilly day.",
+        "rating": 5
+    },
+    {
+        "id": 30,
+        "name": "Olivia",
+        "text": "I tried the sashimi platter and it exceeded my expectations. The fish was incredibly fresh.",
+        "rating": 5
+    },
+    {
+        "id": 31,
+        "name": "Ethan",
+        "text": "The miso soup was a perfect starter. It had just the right balance of flavors.",
+        "rating": 4
+    },
+    {
+        "id": 32,
+        "name": "Isabella",
+        "text": "The katsu curry was deliciously satisfying. The curry sauce was rich and flavorful.",
+        "rating": 5
+    }
+]

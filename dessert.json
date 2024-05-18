@@ -1,0 +1,122 @@
+[
+    {
+        "id": 20,
+        "name": "Mochi",
+        "category": "Dessert",
+        "area": "Japanese",
+        "image": "https://www.themealdb.com/images/media/meals/ytpstt1511814611.jpg",
+        "tags": null,
+        "ingredients": [
+            "Glutinous Rice Flour",
+            "Sugar",
+            "Water",
+            "Cornstarch",
+            "Red Bean Paste"
+        ],
+        "allergens": [
+            "Gluten"
+        ],
+        "price": 4.99
+    },
+    {
+        "id": 21,
+        "name": "Dorayaki",
+        "category": "Dessert",
+        "area": "Japanese",
+        "image": "https://www.themealdb.com/images/media/meals/6p3r351562554747.jpg",
+        "tags": null,
+        "ingredients": [
+            "Flour",
+            "Sugar",
+            "Eggs",
+            "Honey",
+            "Baking Powder",
+            "Red Bean Paste"
+        ],
+        "allergens": [
+            "Egg",
+            "Gluten"
+        ],
+        "price": 5.49
+    },
+    {
+        "id": 22,
+        "name": "Matcha Ice Cream",
+        "category": "Dessert",
+        "area": "Japanese",
+        "image": "https://www.themealdb.com/images/media/meals/wvywsp1486979391.jpg",
+        "tags": null,
+        "ingredients": [
+            "Milk",
+            "Cream",
+            "Sugar",
+            "Matcha Powder",
+            "Egg Yolks"
+        ],
+        "allergens": [
+            "Dairy",
+            "Egg"
+        ],
+        "price": 5.99
+    },
+    {
+        "id": 23,
+        "name": "Taiyaki",
+        "category": "Dessert",
+        "area": "Japanese",
+        "image": "https://www.themealdb.com/images/media/meals/m8fyrd1513709136.jpg",
+        "tags": null,
+        "ingredients": [
+            "Flour",
+            "Baking Powder",
+            "Sugar",
+            "Egg",
+            "Milk",
+            "Red Bean Paste"
+        ],
+        "allergens": [
+            "Egg",
+            "Gluten",
+            "Dairy"
+        ],
+        "price": 6.49
+    },
+    {
+        "id": 24,
+        "name": "Anmitsu",
+        "category": "Dessert",
+        "area": "Japanese",
+        "image": "https://www.themealdb.com/images/media/meals/ysqrus1487425681.jpg",
+        "tags": null,
+        "ingredients": [
+            "Agar-Agar",
+            "Red Bean Paste",
+            "Mochi",
+            "Fruits",
+            "Green Tea Ice Cream",
+            "Sweet Black Syrup"
+        ],
+        "allergens": [
+            "Dairy"
+        ],
+        "price": 7.99
+    },
+    {
+        "id": 25,
+        "name": "Kakigori",
+        "category": "Dessert",
+        "area": "Japanese",
+        "image": "https://www.themealdb.com/images/media/meals/sqrr7t1511813791.jpg",
+        "tags": null,
+        "ingredients": [
+            "Ice",
+            "Sweet Syrup",
+            "Condensed Milk",
+            "Fruits"
+        ],
+        "allergens": [
+            "Dairy"
+        ],
+        "price": 4.49
+    }
+]

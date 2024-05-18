@@ -1,0 +1,151 @@
+[
+    {
+        "id": 26,
+        "name": "Coca Cola",
+        "category": "Soft Drink",
+        "area": "Global",
+        "image": "https://www.themealdb.com/images/media/drinks/q0f2xr1486360878.jpg",
+        "tags": null,
+        "ingredients": [
+            "Carbonated Water",
+            "Sugar",
+            "Caffeine",
+            "Phosphoric Acid",
+            "Caramel Color",
+            "Natural Flavors"
+        ],
+        "allergens": [
+            "Caffeine"
+        ],
+        "price": 2.49
+    },
+    {
+        "id": 27,
+        "name": "Orange Juice",
+        "category": "Juice",
+        "area": "Global",
+        "image": "https://www.themealdb.com/images/media/drinks/uqxqsy1468876708.jpg",
+        "tags": null,
+        "ingredients": [
+            "Orange",
+            "Water",
+            "Sugar"
+        ],
+        "allergens": null,
+        "price": 3.49
+    },
+    {
+        "id": 28,
+        "name": "Green Tea",
+        "category": "Tea",
+        "area": "Japanese",
+        "image": "https://www.themealdb.com/images/media/drinks/wquwxs1441247025.jpg",
+        "tags": null,
+        "ingredients": [
+            "Green Tea Leaves",
+            "Water"
+        ],
+        "allergens": null,
+        "price": 2.99
+    },
+    {
+        "id": 29,
+        "name": "Sake",
+        "category": "Alcoholic Beverage",
+        "area": "Japanese",
+        "image": "https://www.themealdb.com/images/media/drinks/vupptt1441247713.jpg",
+        "tags": null,
+        "ingredients": [
+            "Rice",
+            "Water",
+            "Koji Mold",
+            "Yeast"
+        ],
+        "allergens": null,
+        "price": 7.99
+    },
+    {
+        "id": 30,
+        "name": "Ramune",
+        "category": "Soft Drink",
+        "area": "Japanese",
+        "image": "https://www.themealdb.com/images/media/drinks/svuvvv1487620649.jpg",
+        "tags": null,
+        "ingredients": [
+            "Carbonated Water",
+            "Sugar",
+            "Citric Acid",
+            "Flavoring"
+        ],
+        "allergens": null,
+        "price": 3.99
+    },
+    {
+        "id": 31,
+        "name": "Matcha Latte",
+        "category": "Tea",
+        "area": "Japanese",
+        "image": "https://www.themealdb.com/images/media/drinks/wxqpyw1468923404.jpg",
+        "tags": null,
+        "ingredients": [
+            "Matcha Powder",
+            "Milk",
+            "Water",
+            "Sugar"
+        ],
+        "allergens": [
+            "Dairy"
+        ],
+        "price": 4.99
+    },
+    {
+        "id": 32,
+        "name": "Asahi Beer",
+        "category": "Alcoholic Beverage",
+        "area": "Japanese",
+        "image": "https://www.themealdb.com/images/media/drinks/sutyqp1468878764.jpg",
+        "tags": null,
+        "ingredients": [
+            "Water",
+            "Barley",
+            "Corn",
+            "Rice",
+            "Hops"
+        ],
+        "allergens": [
+            "Gluten"
+        ],
+        "price": 5.99
+    },
+    {
+        "id": 33,
+        "name": "Perrier",
+        "category": "Sparkling Water",
+        "area": "Global",
+        "image": "https://www.themealdb.com/images/media/drinks/yzva7x1504820300.jpg",
+        "tags": null,
+        "ingredients": [
+            "Carbonated Mineral Water"
+        ],
+        "allergens": null,
+        "price": 2.99
+    },
+    {
+        "id": 34,
+        "name": "Calpico",
+        "category": "Soft Drink",
+        "area": "Japanese",
+        "image": "https://www.themealdb.com/images/media/drinks/ytpsxt1473344219.jpg",
+        "tags": null,
+        "ingredients": [
+            "Water",
+            "Nonfat Dry Milk",
+            "Lactic Acid",
+            "Sugar"
+        ],
+        "allergens": [
+            "Dairy"
+        ],
+        "price": 3.49
+    }
+]

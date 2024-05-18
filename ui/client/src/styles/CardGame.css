@@ -1,0 +1,82 @@
+@font-face {
+    font-family: "Beaufort";
+    src:
+        url("../styles/fonts/BeaufortBold.ttf")
+}
+
+
+
+.card {
+    margin: 1rem;
+    width: 30rem;
+    height: fit-content;
+    background-color: #091428;
+    color: #CDFAFA;
+    border: 2px solid #C89B3C;
+    border-radius: 20px;
+    padding: 1rem;
+    font-family: "Beaufort";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.p-card-title {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+
+}
+
+.p-card-subtitle {
+    text-align: center;
+}
+
+.p-card-content {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.2rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    color: #C89B3C;
+}
+
+.saveCardGame {
+    background-color: green;
+}
+
+.cancelCardGame {
+    background-color: lightcoral;
+}
+
+
+.menu-wrapper{
+    background-color: #091428;
+    color:  #C89B3C;
+    width: 100%;
+    font-family: "Beaufort";
+    position: sticky;
+    top: 0;
+}
+
+.menutop{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+li{
+    color: #C89B3C;
+    padding-inline: 2rem;
+    padding-block: 1rem;
+    background-color: #091428;
+}
+span{
+    color: #C89B3C;
+}
