@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import LoginModal from "./LoginModal";
 import RegisterModal from "./RegisterModal";
 
@@ -6,12 +7,15 @@ function Navbar() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isRegisterOpen, setIsRegisterOpen] = useState(false);
-
+    const location = useLocation();
+    
     const openModal = () => { setIsModalOpen(true); };
     const closeModal = () => { setIsModalOpen(false); };
     const toggleMenu = () => { setIsMenuOpen(!isMenuOpen); };
     const openRegister = () => setIsRegisterOpen(true);
     const closeRegister = () => setIsRegisterOpen(false);
+    
+    const isActive = (path) => location.pathname === path ? "dark:text-red-600 dark:border-red-600" : "dark:border-";
 
     return (
         <>
@@ -34,20 +38,20 @@ function Navbar() {
                                 </a>
                             </li>
                             <li className="flex">
-                                <a rel="noopener noreferrer" href="about" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">ABOUT</a>
+                                <a rel="noopener noreferrer" href="/about" className={`flex items-center px-4 -mb-1 border-b-2 ${isActive('/about')}`}>ABOUT</a>
                             </li>
                             <li className="flex">
-                                <a rel="noopener noreferrer" href="reserve" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">RESERVATION</a>
+                                <a rel="noopener noreferrer" href="/reserve" className={`flex items-center px-4 -mb-1 border-b-2 ${isActive('/reserve')}`}>RESERVATION</a>
                             </li>
                             <li className="flex">
-                                <a rel="noopener noreferrer" href="menu" className="flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-red-600 dark:border-red-600">MENU</a>
+                                <a rel="noopener noreferrer" href="/menu" className={`flex items-center px-4 -mb-1 border-b-2 ${isActive('/menu')}`}>MENU</a>
                             </li>
                             <li className="flex">
-                                <a rel="noopener noreferrer" href="reviews" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">REVIEWS</a>
+                                <a rel="noopener noreferrer" href="/reviews" className={`flex items-center px-4 -mb-1 border-b-2 ${isActive('/reviews')}`}>REVIEWS</a>
                             </li>
                             {localStorage.token && (
                                  <li className="flex">
-                                 <a rel="noopener noreferrer" href="manage" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">MANAGE</a>
+                                 <a rel="noopener noreferrer" href="/manage" className={`flex items-center px-4 -mb-1 border-b-2 ${isActive('/manage')}`}>MANAGE</a>
                              </li>
                             )}
                         </ul>
@@ -66,22 +70,21 @@ function Navbar() {
                     <div className="lg:hidden">
                         <ul className="space-y-3">
                             <li className="flex">
-                                <a rel="noopener noreferrer" href="about" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">ABOUT</a>
+                                <a rel="noopener noreferrer" href="/about" className={`flex items-center px-4 -mb-1 border-b-2 ${isActive('/about')}`}>ABOUT</a>
                             </li>
                             <li className="flex">
-                                <a rel="noopener noreferrer" href="reserve" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">RESERVATION</a>
+                                <a rel="noopener noreferrer" href="/reserve" className={`flex items-center px-4 -mb-1 border-b-2 ${isActive('/reserve')}`}>RESERVATION</a>
                             </li>
                             <li className="flex">
-                                <a rel="noopener noreferrer" href="menu" className="flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-red-600 dark:border-red-600">MENU</a>
+                                <a rel="noopener noreferrer" href="/menu" className={`flex items-center px-4 -mb-1 border-b-2 ${isActive('/menu')}`}>MENU</a>
                             </li>
                             <li className="flex">
-                                <a rel="noopener noreferrer" href="reviews" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">REVIEWS</a>
+                                <a rel="noopener noreferrer" href="/reviews" className={`flex items-center px-4 -mb-1 border-b-2 ${isActive('/reviews')}`}>REVIEWS</a>
                             </li>
                             <li className="flex">
                                 <button onClick={openModal} className="w-full px-8 py-3 font-semibold rounded my-2 dark:bg-red-600 dark:text-gray-50">Log in</button>
                                 {/*<button onClick={openRegister} className="w-full px-8 py-3 font-semibold rounded dark:bg-red-600 dark:text-gray-50">Sign Up</button>*/}
                             </li>
-
                         </ul>
                     </div>
                 )}
