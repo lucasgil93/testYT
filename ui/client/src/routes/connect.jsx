@@ -75,7 +75,7 @@ export default function Connect() {
   return (
     <>    <Navbar></Navbar>
 
-      <section className="my-8 dark:bg-gray-100 dark:text-gray-800">
+      <section className="mb-8 dark:bg-gray-100 dark:text-gray-800">
 
         <header className="h-screen bg-center bg-cover flex flex-col items-center justify-center border-b-[1rem]"
           style={{
