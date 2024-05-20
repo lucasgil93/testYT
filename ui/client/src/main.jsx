@@ -8,6 +8,7 @@ import Menu from "./routes/menu";
 import About from "./routes/about";
 import Reserve from "./routes/reserve";
 import Connect from "./routes/connect";
+import Manage from "./routes/manage"
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
     path: "menu",
     element: <Menu />,
   },
+  {
+    path: "manage",
+    element: <Manage />,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

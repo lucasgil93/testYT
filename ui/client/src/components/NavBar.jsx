@@ -1,21 +1,17 @@
 import React, { useState } from "react";
 import LoginModal from "./LoginModal";
+import RegisterModal from "./RegisterModal";
 
 function Navbar() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isRegisterOpen, setIsRegisterOpen] = useState(false);
 
-    const openModal = () => {
-        setIsModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setIsModalOpen(false);
-    };
-
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+    const openModal = () => { setIsModalOpen(true); };
+    const closeModal = () => { setIsModalOpen(false); };
+    const toggleMenu = () => { setIsMenuOpen(!isMenuOpen); };
+    const openRegister = () => setIsRegisterOpen(true);
+    const closeRegister = () => setIsRegisterOpen(false);
 
     return (
         <>
@@ -49,10 +45,16 @@ function Navbar() {
                             <li className="flex">
                                 <a rel="noopener noreferrer" href="reviews" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">REVIEWS</a>
                             </li>
+                            {localStorage.token && (
+                                 <li className="flex">
+                                 <a rel="noopener noreferrer" href="manage" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">MANAGE</a>
+                             </li>
+                            )}
                         </ul>
                     </div>
                     <div className="items-center flex-shrink-0 hidden lg:flex">
-                        <button onClick={openModal} className="px-8 py-3 font-semibold rounded dark:bg-red-600 dark:text-gray-50">Log in</button>
+                        <button onClick={openModal} className="px-8 py-3 mx-2 font-semibold rounded dark:bg-red-600 dark:text-gray-50">Log in</button>
+                        {/*<button onClick={openRegister} className="px-8 py-3 font-semibold rounded dark:bg-red-600 dark:text-gray-50">Sign Up</button>*/}
                     </div>
                     <button className="p-4 lg:hidden" onClick={toggleMenu}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 dark:text-gray-800">
@@ -76,8 +78,10 @@ function Navbar() {
                                 <a rel="noopener noreferrer" href="reviews" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">REVIEWS</a>
                             </li>
                             <li className="flex">
-                                <button onClick={openModal} className="w-full px-8 py-3 font-semibold rounded dark:bg-red-600 dark:text-gray-50">Log in</button>
+                                <button onClick={openModal} className="w-full px-8 py-3 font-semibold rounded my-2 dark:bg-red-600 dark:text-gray-50">Log in</button>
+                                {/*<button onClick={openRegister} className="w-full px-8 py-3 font-semibold rounded dark:bg-red-600 dark:text-gray-50">Sign Up</button>*/}
                             </li>
+
                         </ul>
                     </div>
                 )}
@@ -85,6 +89,7 @@ function Navbar() {
             {isModalOpen && (
                 <LoginModal onClose={closeModal} />
             )}
+            {/*{isRegisterOpen && <RegisterModal onClose={closeRegister} />}*/}
         </>
     );
 }

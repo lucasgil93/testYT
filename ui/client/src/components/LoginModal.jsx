@@ -24,10 +24,7 @@ function LoginModal({ onClose }) {
             return;
         }
 
-        const data = {
-            username: username,
-            password: password
-        };
+        const data = { username, password };
 
         try {
             const response = await fetch(API_URL + "api/login", {
@@ -39,10 +36,14 @@ function LoginModal({ onClose }) {
             });
 
             if (response.ok) {
+                const result = await response.json();
                 showSuccess('Logged in successfully');
                 setUsername("");
                 setPassword("");
+                localStorage.setItem('token', result.token);  // Save the token to local storage
                 onClose();  // Close the modal after logging in
+            } else if (response.status === 401) {
+                showError("Invalid login credentials");
             } else {
                 throw new Error("Failed to log in");
             }
@@ -55,10 +56,7 @@ function LoginModal({ onClose }) {
     return (
         <>
             <Toast ref={toast} />
-            {/* Background overlay */}
             <div className="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
-
-            {/* Modal */}
             <div className="fixed inset-0 flex items-center justify-center z-50">
                 <div className="bg-white dark:bg-slate-300 dark:text-gray-800 p-8 shadow-sm rounded-xl lg:p-12 w-11/12 max-w-xl">
                     <div className="flex flex-col items-center w-full">
@@ -92,7 +90,6 @@ function LoginModal({ onClose }) {
                                         Log In
                                     </button>
                                 </div>
-
                             </div>
                         </div>
                     </div>

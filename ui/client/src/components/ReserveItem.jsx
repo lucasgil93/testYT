@@ -10,7 +10,8 @@ function ReserveItem() {
         date: "",
         time: "",
         numberOfPersons: "",
-        reservationId: ""
+        reservationId: "",
+        created: "",
     });
     const [isCancelModalOpen, setCancelModalOpen] = useState(false);
 
@@ -35,16 +36,17 @@ function ReserveItem() {
     };
 
     const openingTime = new Date();
-    openingTime.setHours(9, 0, 0); // 9:00 AM
+    openingTime.setHours(12, 0, 0); // 9:00 AM
 
     const closingTime = new Date();
-    closingTime.setHours(21, 0, 0); // 9:00 PM
+    closingTime.setHours(23, 0, 0); // 9:00 PM
 
     const timeIntervals = generateTimeIntervals(openingTime, closingTime, 30); // 30-minute intervals
 
     const handleSubmit = async () => {
         const { name, date, time, numberOfPersons } = formData;
         const reservationId = generateId();
+        const created = new Date();
 
         const showWarn = (msg) => {
             toast.current.show({ severity: 'warn', summary: 'Warning', detail: msg, life: 3000 });
@@ -79,6 +81,7 @@ function ReserveItem() {
         data.append("time", time);
         data.append("numberGuests", numberOfPersons);
         data.append("reservationId", reservationId);
+        data.append("created", created);
 
         console.log("FormData entries:", Array.from(data.entries()));  // Log the formData to ensure reservationId is included
 
@@ -89,12 +92,14 @@ function ReserveItem() {
             });
 
             if (response.ok) {
+
                 setFormData({
                     name: "",
                     date: "",
                     time: "",
                     numberOfPersons: "",
-                    reservationId: ""
+                    reservationId: "",
+                    created: "",
                 });
                 showSuccess(`Reservation made successfully. Your reservation ID is ${reservationId}`);
             } else {

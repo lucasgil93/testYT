@@ -14,6 +14,9 @@ function ReviewModal({ onClose }) {
     const API_URL = "http://localhost:5038/";
 
     const handleSubmit = async () => {
+
+        let created = new Date();
+
         const showWarn = (msg) => {
             toast.current.show({ severity: 'warn', summary: 'Warning', detail: msg, life: 3000 });
         }
@@ -33,6 +36,7 @@ function ReviewModal({ onClose }) {
         data.append("text", text);
         data.append("name", name);
         data.append("rating", rating);
+        data.append("created", created);
 
         try {
             const response = await fetch(API_URL + "api/project/AddReview", {
@@ -45,6 +49,7 @@ function ReviewModal({ onClose }) {
                 setName("");
                 setText("");
                 setRating(0);
+                created = ""
                 setTimeout(() => {
                     onClose();
                 }, 1000); // Close the modal after submitting
