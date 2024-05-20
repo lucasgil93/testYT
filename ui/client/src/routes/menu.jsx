@@ -89,8 +89,7 @@ export default function Menu() {
 
     return (
         <>
-            <Navbar></Navbar>
-            {/*<Carousel></Carousel>*/}
+            <Navbar />
             <header className="h-screen bg-center bg-cover flex flex-col items-center justify-center border-b-[1rem]"
                 style={{
                     backgroundColor: '#D32F2F',
@@ -99,12 +98,13 @@ export default function Menu() {
                     margin: 0,
                 }}>
                 <div className="divHead flex flex-row items-center justify-center h-[10%] w-full backdrop-blur-[50px] mt-40 mb-40">
-                    <a id="bajar" href="#conjunto1"> <p className="text-black text-3xl font-bold m-5"> sushi made right</p></a>
+                    <a id="bajar" href="#conjunto1">
+                        <p className="text-black text-3xl font-bold m-5">sushi made right</p>
+                    </a>
                 </div>
-
-            </header >
+            </header>
             <section className="lg:flex flex-col justify-center" id="conjunto1">
-                <ul className="items-stretch hidden space-x-3 lg:flex bg-white justify-around sticky top-0 pb-5 pt-5">
+                <ul className="items-stretch flex flex-col lg:flex-row lg:space-x-3 space-y-3 lg:space-y-0 bg-white justify-around sticky top-0 pb-5 pt-5">
                     <li className="flex">
                         <a rel="noopener noreferrer" href="#appetizers" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">APPETIZERS</a>
                     </li>
@@ -119,27 +119,25 @@ export default function Menu() {
                     </li>
                 </ul>
                 <section className="bg-slate-200">
-                    <div id="appetizers"> <h2 className="text-7xl pt-10 font-bold text-gray-900 mb-2 text-center">APPETIZERS</h2> {appetizers.map((e) => createMenuItems(e))}</div>
-                    <table>
-                        <tr className="flex">
-                            <td><div id="meals">  <h2 className="text-7xl font-bold text-gray-900 mb-2 text-center">MAIN DISHES</h2>{meals.map((e) => createMenuItems(e))}</div></td>
-                            <td><div id="drinks"> <h2 className="text-7xl font-bold text-gray-900 mb-2 text-center">DRINKS</h2>{drinks.map((e) => createMenuItems(e))}</div></td>
-                        </tr>
-
-
-                    </table>
-
-                    <div id="desserts"> <h2 className="text-7xl font-bold text-gray-900 mb-2 text-center">DESSERTS</h2>  {desserts.map((e) => createMenuItems(e))}</div>
-
-
-
-
-
+                    <div id="appetizers" className="pt-[5rem] mt-[-5rem]">
+                        <h2 className="text-7xl pt-10 font-bold text-gray-900 mb-2 text-center">APPETIZERS</h2>
+                        {appetizers.map((e) => createMenuItems(e))}
+                    </div>
+                    <div id="meals" className="pt-[5rem] mt-[-5rem]">
+                        <h2 className="text-7xl font-bold text-gray-900 mb-2 text-center">MAIN DISHES</h2>
+                        {meals.map((e) => createMenuItems(e))}
+                    </div>
+                    <div id="drinks" className="pt-[5rem] mt-[-5rem]">
+                        <h2 className="text-7xl font-bold text-gray-900 mb-2 text-center">DRINKS</h2>
+                        {drinks.map((e) => createMenuItems(e))}
+                    </div>
+                    <div id="desserts" className="pt-[5rem] mt-[-5rem]">
+                        <h2 className="text-7xl font-bold text-gray-900 mb-2 text-center">DESSERTS</h2>
+                        {desserts.map((e) => createMenuItems(e))}
+                    </div>
                 </section>
             </section>
-            <Footer></Footer>
-
+            <Footer />
         </>
-    )
+    );
 }
-

@@ -20,6 +20,21 @@ app.listen(5038, () => {
 
 //HASTA AQUI FUNCIONA
 
+/* Esto seria para el login
+
+app.post('/api/login', async (req, res) => {
+    const {username, password} = req.body;
+    const user = await User.findOne({username});
+  
+    if (user && user.password === password) {
+      const token = jwt.sign({id: user._id}, 'secret-key');
+      res.send({token});
+    } else {
+      res.status(401).send('Invalid login credentials');
+    }
+  });
+*/
+
 app.get('/api/project/GetMeals', (request, response) => {
     database.collection("meals").find({}).toArray((error, result) => {
         response.send(result);

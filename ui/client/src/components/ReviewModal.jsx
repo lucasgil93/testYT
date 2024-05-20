@@ -45,7 +45,9 @@ function ReviewModal({ onClose }) {
                 setName("");
                 setText("");
                 setRating(0);
-                onClose();  // Close the modal after submitting
+                setTimeout(() => {
+                    onClose();
+                }, 1000); // Close the modal after submitting
             } else {
                 throw new Error("Failed to make the review");
             }

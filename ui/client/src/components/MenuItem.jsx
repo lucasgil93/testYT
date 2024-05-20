@@ -14,7 +14,7 @@ export default function MenuItem(props) {
  ^*/
     return (
 
-        <div className="menuItem flex justify-start items-left bg-orange-50 m-7 p-4 rounded-lg shadow-lg">
+        <div className="menuItem flex justify-start items-left bg-orange-50 m-7 p-4 border-red-500 border-2 rounded-lg shadow-lg">
             <Card name={props.name} category={props.category}>
                 <div className="p-4">
                     <h2 className="text-3xl font-bold text-gray-900 mb-2">{props.name}</h2>

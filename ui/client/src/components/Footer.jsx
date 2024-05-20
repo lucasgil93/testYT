@@ -16,6 +16,20 @@ function Footer() {
                 </div>
                 <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
                     <div className="space-y-3">
+                        <h3 className="uppercase dark:text-gray-900">Hours</h3>
+                        <ul className="space-y-1">
+                            <li>
+                                <a rel="noopener noreferrer" href="#">Monday-Thursday: 11:30 AM / 10:00 PM</a>
+                            </li>
+                            <li>
+                                <a rel="noopener noreferrer" href="#">Friday-Saturday: 11:30 AM / 11:00 PM</a>
+                            </li>
+                            <li>
+                                <a rel="noopener noreferrer" href="#">Sunday: 12:00 PM / 9:00 PM</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="space-y-3">
                         <h3 className="tracking-wide uppercase dark:text-gray-900">Location</h3>
                         <ul className="space-y-1">
                             <li>
@@ -29,20 +43,6 @@ function Footer() {
                             </li>
                             <li>
                                 <a rel="noopener noreferrer" href="#">sushimaderight@sakura.com</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="space-y-3">
-                        <h3 className="uppercase dark:text-gray-900">Hours</h3>
-                        <ul className="space-y-1">
-                            <li>
-                                <a rel="noopener noreferrer" href="#">Monday-Thursday: 11:30 AM / 10:00 PM</a>
-                            </li>
-                            <li>
-                                <a rel="noopener noreferrer" href="#">Friday-Saturday: 11:30 AM / 11:00 PM</a>
-                            </li>
-                            <li>
-                                <a rel="noopener noreferrer" href="#">Sunday: 12:00 PM / 9:00 PM</a>
                             </li>
                         </ul>
                     </div>

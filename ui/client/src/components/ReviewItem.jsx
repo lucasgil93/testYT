@@ -2,7 +2,7 @@ import React from "react";
 
 function ReviewItem(props) {
 
-    return (<div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
+    return (<div className="flex flex-col max-w-xs mx-4 my-6 shadow-lg">
         <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 dark:bg-gray-50">
             <p className="relative px-6 py-1 text-xl italic text-center dark:text-gray-800">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 dark:text-red-600">
