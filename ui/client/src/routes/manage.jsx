@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
-import DataTableReviews from "../components/DataTableReviews";
-import DataTableReserves from "../components/DataTableReserves";
+import DataTableData from "../components/DataTableData";
 
 function Manage() {
     const [reviews, setReviews] = useState([]);
@@ -53,12 +52,21 @@ function Manage() {
             )}
             <Navbar />
 
-            <h2 className="text-center text-5xl">Reviews</h2>
-            <DataTableReviews />
+
 
             <h2 className="text-center text-5xl">Reserves</h2>
-            <DataTableReserves />
+            <DataTableData data={reserves} />
+            <h2 className="text-center text-5xl">Reviews</h2>
+            <DataTableData data={reviews} />
 
+            <h2 className="text-center text-5xl">Meals</h2>
+            <DataTableData data={meals} />
+            <h2 className="text-center text-5xl">Appetizers</h2>
+            <DataTableData data={apps} />
+            <h2 className="text-center text-5xl">Drinks</h2>
+            <DataTableData data={drinks} />
+            <h2 className="text-center text-5xl">Desserts</h2>
+            <DataTableData data={desserts} />
 
             <Footer />
         </>
