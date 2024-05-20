@@ -19,7 +19,7 @@ export default function MenuItem(props) {
                 <div className="p-2">
                     <div className='flex flex-row items-center justify-between'>
                     <h2 className="text-2xl font-bold text-gray-900 ">{props.name}</h2>
-                    <h2 className="text-2xl font-semibold text-red-500">{props.price}<span>€</span></h2>
+                    <h2 className="text-2xl font-semibold text-gray-900">{props.price}<span>€</span></h2>
                     </div>
                     <p className="text-gray-700 text-sm ml-20">{props.ingredients.map(ingredient => ingredient.toUpperCase()).join(', ')}</p>
                     {props.allergens && props.allergens.length > 0 && (

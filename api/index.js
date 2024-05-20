@@ -84,17 +84,30 @@ app.post('/api/project/AddReserve', multer().none(), (request, response) => {
             name: request.body.name,
             date: request.body.date,
             time: request.body.time,
-            numberGuests: request.body.numberGuests
+            numberGuests: request.body.numberGuests,
+            reservationId: request.body.reservationId
         });
-        response.json("Added Reserve Succesfully");
+        response.json("Added Reserve Successfully");
     })
-})
+});
 
 
+app.delete('/api/project/DeleteReserve', (request, response) => {
+    const reservationId = request.query.reservationId;
 
-app.delete('/api/todoapp/DeleteNotes', (request, response) => {
-    database.collection("meals").deleteOne({
-        id: request.query.id
+    if (!reservationId) {
+        return response.status(400).json({ error: "Reservation ID is required" });
+    }
+
+    database.collection("reserves").deleteOne({ reservationId: reservationId }, (error, result) => {
+        if (error) {
+            return response.status(500).json({ error: "Failed to cancel the reservation" });
+        }
+
+        if (result.deletedCount === 0) {
+            return response.status(404).json({ error: "Reservation not found" });
+        }
+
+        response.json("Reservation Deleted Successfully");
     });
-    response.json("Deleted Successfully")
-})
+});

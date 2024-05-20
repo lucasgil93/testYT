@@ -28,7 +28,7 @@ function Landing() {
                 </div>
 
 
-                <a id="bajar" href="#conjunto1"><svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-arrow-down" width="50"
+                <a id="bajar" href="#conjunto1"className="bg-red-500 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-arrow-down" width="50"
                     height="50" viewBox="0 0 24 24" strokeWidth="2" stroke="#FFFFFF" fill="none"
                     strokeLinecap="round" strokeLinejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
