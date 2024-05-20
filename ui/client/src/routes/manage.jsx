@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 import DataTableData from "../components/DataTableData";
@@ -51,24 +53,43 @@ function Manage() {
                 window.close()
             )}
             <Navbar />
+            <Tabs className="m-2">
+                <TabList>
+                    <Tab>Reserves</Tab>
+                    <Tab>Reviews</Tab>
+                    <Tab>Meals</Tab>
+                    <Tab>Appetizers</Tab>
+                    <Tab>Drinks</Tab>
+                    <Tab>Desserts</Tab>
+                </TabList>
 
+                <TabPanel>
+                    <h2 className="text-center text-5xl">Reserves</h2>
+                    <DataTableData data={reserves} />
+                </TabPanel>
+                <TabPanel>
+                    <h2 className="text-center text-5xl">Reviews</h2>
+                    <DataTableData data={reviews} />
+                </TabPanel>
+                <TabPanel>
+                    <h2 className="text-center text-5xl">Meals</h2>
+                    <DataTableData data={meals} />
+                </TabPanel>
+                <TabPanel>
+                    <h2 className="text-center text-5xl">Appetizers</h2>
+                    <DataTableData data={apps} />
+                </TabPanel>
+                <TabPanel>
+                    <h2 className="text-center text-5xl">Drinks</h2>
+                    <DataTableData data={drinks} />
+                </TabPanel>
+                <TabPanel>
+                    <h2 className="text-center text-5xl">Desserts</h2>
+                    <DataTableData data={desserts} />
+                </TabPanel>
+            </Tabs>
+            <Footer/>
 
-
-            <h2 className="text-center text-5xl">Reserves</h2>
-            <DataTableData data={reserves} />
-            <h2 className="text-center text-5xl">Reviews</h2>
-            <DataTableData data={reviews} />
-
-            <h2 className="text-center text-5xl">Meals</h2>
-            <DataTableData data={meals} />
-            <h2 className="text-center text-5xl">Appetizers</h2>
-            <DataTableData data={apps} />
-            <h2 className="text-center text-5xl">Drinks</h2>
-            <DataTableData data={drinks} />
-            <h2 className="text-center text-5xl">Desserts</h2>
-            <DataTableData data={desserts} />
-
-            <Footer />
         </>
     );
 }
