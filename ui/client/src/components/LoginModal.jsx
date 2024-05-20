@@ -84,15 +84,15 @@ function LoginModal({ onClose }) {
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
                                     />
-                                     <button
-                                    type="button"
-                                    className="py-4 my-8 font-semibold rounded-md dark:text-gray-50 dark:bg-red-600"
-                                    onClick={handleSubmit}
-                                >
-                                    Log In
-                                </button>
+                                    <button
+                                        type="button"
+                                        className="py-4 my-8 font-semibold rounded-md dark:text-gray-50 dark:bg-red-600"
+                                        onClick={handleSubmit}
+                                    >
+                                        Log In
+                                    </button>
                                 </div>
-                               
+
                             </div>
                         </div>
                     </div>
