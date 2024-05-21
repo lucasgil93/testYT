@@ -124,9 +124,9 @@ function Order() {
         <TabList>
           <Tab>Cart</Tab>
           <Tab>Meals</Tab>
+          <Tab>Desserts</Tab>
           <Tab>Appetizers</Tab>
           <Tab>Drinks</Tab>
-          <Tab>Desserts</Tab>
         </TabList>
 
         <TabPanel>
@@ -140,7 +140,7 @@ function Order() {
           />
         </TabPanel>
         <TabPanel>
-          <h2 className="text-center">Meals</h2>
+          <h2 className="text-center text-4xl">Meals</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
             {meals.map((item) => (
               <OrderItem
@@ -152,7 +152,7 @@ function Order() {
           </div>
         </TabPanel>
         <TabPanel>
-          <h2 className="text-center mt-10">Desserts</h2>
+          <h2 className="text-center text-4xl mt-10">Desserts</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
             {desserts.map((item) => (
               <OrderItem
@@ -164,7 +164,7 @@ function Order() {
           </div>
         </TabPanel>
         <TabPanel>
-          <h2 className="text-center mt-10">Appetizers</h2>
+          <h2 className="text-center text-4xl mt-10">Appetizers</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
             {appetizers.map((item) => (
               <OrderItem
@@ -176,7 +176,7 @@ function Order() {
           </div>
         </TabPanel>
         <TabPanel>
-          <h2 className="text-center mt-10">Drinks</h2>
+          <h2 className="text-center text-4xl mt-10">Drinks</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
             {drinks.map((item) => (
               <OrderItem

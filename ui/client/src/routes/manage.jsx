@@ -15,6 +15,7 @@ function Manage() {
     const [drinks, setDrinks] = useState([]);
     const [desserts, setDesserts] = useState([]);
     const [reserves, setReserves] = useState([]);
+    const [orders, setOrders] = useState([])
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const API_URL = "http://localhost:5038/api/project/";
@@ -22,13 +23,14 @@ function Manage() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const [reviewsResponse, mealsResponse, appsResponse, drinksResponse, dessertsResponse, reservesResponse] = await Promise.all([
+                const [reviewsResponse, mealsResponse, appsResponse, drinksResponse, dessertsResponse, reservesResponse, ordersResponse] = await Promise.all([
                     fetch(API_URL + 'GetReviews'),
                     fetch(API_URL + 'GetMeals'),
                     fetch(API_URL + 'GetApps'),
                     fetch(API_URL + 'GetDrinks'),
                     fetch(API_URL + 'GetDesserts'),
-                    fetch(API_URL + 'GetReserves')
+                    fetch(API_URL + 'GetReserves'),
+                    fetch(API_URL + "GetOrders"),
                 ]);
                 const reviewsData = await reviewsResponse.json();
                 const mealsData = await mealsResponse.json();
@@ -36,12 +38,14 @@ function Manage() {
                 const drinksData = await drinksResponse.json();
                 const dessertsData = await dessertsResponse.json();
                 const reservesData = await reservesResponse.json();
+                const ordersData = await ordersResponse.json();
                 setReviews(reviewsData);
                 setMeals(mealsData);
                 setApps(appsData);
                 setDrinks(drinksData);
                 setDesserts(dessertsData);
                 setReserves(reservesData);
+                setOrders(ordersData)
             } catch (error) {
                 console.error(error);
             }
@@ -59,6 +63,7 @@ function Manage() {
             <Tabs className="m-2">
                 <TabList>
                     <Tab>Reserves</Tab>
+                    <Tab>Orders</Tab>
                     <Tab>Reviews</Tab>
                     <Tab>Meals</Tab>
                     <Tab>Appetizers</Tab>
@@ -69,6 +74,10 @@ function Manage() {
                 <TabPanel>
                     <h2 className="text-center text-5xl">Reserves</h2>
                     <DataTableData data={reserves} />
+                </TabPanel>
+                <TabPanel>
+                    <h2 className="text-center text-5xl">Orders</h2>
+                    <DataTableData data={orders} />
                 </TabPanel>
                 <TabPanel>
                     <h2 className="text-center text-5xl">Reviews</h2>

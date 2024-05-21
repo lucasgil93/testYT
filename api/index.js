@@ -149,6 +149,31 @@ app.post('/api/project/AddReserve', multer().none(), (request, response) => {
     })
 });
 
+
+//Api to get all the orders data.
+
+app.get('/api/project/GetOrders', (request, response) => {
+    database.collection("orders").find({}).toArray((error, result) => {
+        response.send(result);
+    })
+})
+
+
+
+//Api to add a order created via the order tab by a employee of the restaurant // we parse the json data thats been stringyfied in the frontend for proper storage
+
+app.post('/api/project/AddOrder', multer().none(), (request, response) => {
+    database.collection("orders").count({}, function (error, numOfDocs) {
+        database.collection("orders").insertOne({
+            id: (numOfDocs + 1),
+            cart: JSON.parse(request.body.cart),
+            totalPrice: request.body.totalPrice,
+            created: request.body.created
+        });
+        response.json("Added Order Successfully");
+    })
+});
+
 //Api to delete a reserve that searches for the reservationId code thats given to the customer to save if he/she/them wants to cancel the reservation
 
 app.delete('/api/project/DeleteReserve', (request, response) => {
