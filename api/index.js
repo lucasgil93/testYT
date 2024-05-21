@@ -6,13 +6,19 @@ var bodyParser = require("body-parser");
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcrypt");
 
+//Everything we need for the backend to work.
+
 var app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+//Enviroment variables to make work easier
+
 var CONNECTION_STRING = "mongodb+srv://lucasgildominguez:lucasgildominguez@cluster.pwxbaqr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster";
 var DATABASENAME = "project";
 var database;
+
+//Connection with DB (Executed with in terminal with {node index.js})
 
 app.listen(5038, () => {
     MongoClient.connect(CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true }, (error, client) => {
@@ -22,7 +28,7 @@ app.listen(5038, () => {
     });
 });
 
-//HASTA AQUI FUNCIONA
+//Login call to server
 
 app.post('/api/login', async (req, res) => {
     const { username, password } = req.body;
@@ -43,6 +49,7 @@ app.post('/api/login', async (req, res) => {
 
 
 // Registration route
+
 app.post('/api/register', async (req, res) => {
     const { username, password } = req.body;
 
@@ -62,6 +69,7 @@ app.post('/api/register', async (req, res) => {
     }
 });
 
+//Api to get all the meals data
 
 app.get('/api/project/GetMeals', (request, response) => {
     database.collection("meals").find({}).toArray((error, result) => {
@@ -69,11 +77,15 @@ app.get('/api/project/GetMeals', (request, response) => {
     })
 })
 
+//Api to get all the drinks data
+
 app.get('/api/project/GetDrinks', (request, response) => {
     database.collection("beverages").find({}).toArray((error, result) => {
         response.send(result);
     })
 })
+
+//Api to get the desserts data
 
 app.get('/api/project/GetDesserts', (request, response) => {
     database.collection("dessert").find({}).toArray((error, result) => {
@@ -81,17 +93,23 @@ app.get('/api/project/GetDesserts', (request, response) => {
     })
 })
 
+//Api to get the appetizers data
+
 app.get('/api/project/GetApps', (request, response) => {
     database.collection("appetizers").find({}).toArray((error, result) => {
         response.send(result);
     })
 })
 
+//Api to get all the reviews
+
 app.get('/api/project/GetReviews', (request, response) => {
     database.collection("reviews").find({}).toArray((error, result) => {
         response.send(result);
     })
 })
+
+//Api to add a new review with all the fields and adding an identifier that relates to the number of reviews done.
 
 app.post('/api/project/AddReview', multer().none(), (request, response) => {
     database.collection("reviews").count({}, function (error, numOfDocs) {
@@ -106,12 +124,15 @@ app.post('/api/project/AddReview', multer().none(), (request, response) => {
     })
 })
 
+//Api to get all the reserves data.
 
 app.get('/api/project/GetReserves', (request, response) => {
     database.collection("reserves").find({}).toArray((error, result) => {
         response.send(result);
     })
 })
+
+//Api to add a new reservation with an id for the number of reserve and the rest of the fields that must be filled.
 
 app.post('/api/project/AddReserve', multer().none(), (request, response) => {
     database.collection("reserves").count({}, function (error, numOfDocs) {
@@ -128,6 +149,7 @@ app.post('/api/project/AddReserve', multer().none(), (request, response) => {
     })
 });
 
+//Api to delete a reserve that searches for the reservationId code thats given to the customer to save if he/she/them wants to cancel the reservation
 
 app.delete('/api/project/DeleteReserve', (request, response) => {
     const reservationId = request.query.reservationId;
