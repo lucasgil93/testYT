@@ -2,6 +2,8 @@
 import { Toast } from 'primereact/toast';
 import React, { useRef, useMemo } from 'react';
 
+//Component that allows us to store the foods in the cart and get them into the database
+
 export default function HeaderOrder({
   cart,
   removeFromCart,

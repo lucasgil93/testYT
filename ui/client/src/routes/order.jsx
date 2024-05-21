@@ -6,6 +6,9 @@ import Footer from "../components/Footer";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
+
+//Component that stores the food items into a cart in localstorage and also gets all the food from the database and separates it in tabs where iterates the data and creates orderitems accordingly
+
 function Order() {
   const initialCart = () => {
     const localStorageCart = localStorage.getItem("cart");
@@ -19,7 +22,7 @@ function Order() {
   const [cart, setCart] = useState(initialCart);
 
   const MIN_ITEMS = 1;
-  const MAX_ITEMS = 5;
+  const MAX_ITEMS = 8;
 
   let API_URL = "http://localhost:5038/";
 

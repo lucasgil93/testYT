@@ -1,6 +1,8 @@
 export default function OrderItem({ item, addToCart }) {
   const { id, name, image, description, price } = item;
 
+  //Component that gets food items into the cart so it can be extracted later in a order
+
   return (
     <div className="bg-slate-200 m-1 p-2 border-2 border-gray-600 rounded-md shadow-lg">
       <div className="flex flex-row items-center justify-between">
