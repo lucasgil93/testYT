@@ -1,14 +1,6 @@
-
-import { useEffect, useContext, useState } from 'react';
-import './App.css'
-import NavBar from './components/NavBar';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
 import Landing from "./components/Landing"
 
+//Small component that acts as the landing page/home/index for the website loading the landing component.
 
 function App() {
 

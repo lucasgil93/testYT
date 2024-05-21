@@ -3,7 +3,10 @@ import imageHeader from '../assets/pexels-huy-phan-316220-1409050.jpg';
 import { useEffect, useContext, useState } from 'react';
 import MenuItem from "../components/MenuItem";
 import Footer from "../components/Footer";
-import Carousel from "../components/Carousel";
+
+//In this component we have the menu page, that handles getting all the food related data from the data base and generating 
+//menuitems according the data that we get. Also we have a second navbar that sticks to the top when seen that redirect us
+//to the specific food sections
 
 export default function Menu() {
 

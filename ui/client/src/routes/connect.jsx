@@ -7,6 +7,9 @@ import React, { useState, useEffect } from "react";
 import imageHeader from '../assets/pexels-valery-anatolievich-485490101-16923440.jpg';
 import ReviewModal from "../components/ReviewModal";
 
+//Connect component that makes up the reviews page this handles getting the reviews and showing 8 (in groups of 4) of them
+// and also the opening and closing of the reviewmodal component
+
 export default function Connect() {
 
   const [reviews, setReviews] = useState([]);

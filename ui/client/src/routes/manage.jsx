@@ -5,6 +5,9 @@ import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 import DataTableData from "../components/DataTableData";
 
+//Component that makes up the pages that only the admin and bar staff see where the data is showed in a more technical way.
+//We get almost all the data from the data base and show it with the component datatabledata and some tabs
+
 function Manage() {
     const [reviews, setReviews] = useState([]);
     const [meals, setMeals] = useState([]);

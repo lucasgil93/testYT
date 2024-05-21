@@ -4,6 +4,8 @@ import Footer from "../components/Footer";
 import AboutItem from "../components/AboutItem";
 import AboutPhilo from "../components/AboutPhilo";
 
+//Main page component that form the about page with the navbar the footer and the about components
+
 export default function About() {
 
   return (
