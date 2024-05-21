@@ -8,6 +8,12 @@ import LandingItem from "./LandingItem";
 import "../styles/Landing.css"
 
 
+//Component that is the landing page and serves as home/index really.
+//Header with picture and arrow that links to down below
+//4 division that could have been made with components but i wanted to keep the design as it is and dont exceed the use of pure CSS
+//So they're made with tailwind almost purely only missing the custom fonts and the styling of toast
+//The last commented item would be how a component could generate a new division (or all of them in fact)
+
 function Landing() {
     return (
         <>
@@ -29,7 +35,7 @@ function Landing() {
                 </div>
 
 
-                <a id="bajar" href="#conjunto1" className="bg-red-500 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-arrow-down" width="50"
+                <a id="bajar" href="#options" className="bg-red-500 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-arrow-down" width="50"
                     height="50" viewBox="0 0 24 24" strokeWidth="2" stroke="#FFFFFF" fill="none"
                     strokeLinecap="round" strokeLinejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -39,7 +45,7 @@ function Landing() {
                 </svg></a>
 
             </header >
-            <div id="conjunto1">
+            <div id="options">
                 <a href="menu">
                     <div className="divPar h-[50vh] bg-green-700 flex flex-col items-start justify-center " style={{
                         backgroundColor: '#597e8d',

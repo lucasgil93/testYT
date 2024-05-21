@@ -6,6 +6,7 @@ import img5 from '../assets/pexels-rajesh-tp-749235-2098085.jpg';
 import img6 from '../assets/pexels-rdne-6645975.jpg';
 import img7 from '../assets/pexels-cup-of-couple-7660443.jpg';
 
+//Small component that imports the pictures and shows them in a carrousel format.
 
 function Carousel() {
     return (<div className="relative w-full flex gap-4 py-6 overflow-x-auto">

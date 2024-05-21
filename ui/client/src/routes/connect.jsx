@@ -47,8 +47,8 @@ export default function Connect() {
   };
 
   // Assuming 'reviews' is your array of reviews
-  const shuffledReviews1 = shuffleArray(reviews).slice(0, 3);
-  const shuffledReviews2 = shuffleArray(reviews).slice(0, 3);
+  const shuffledReviews1 = shuffleArray(reviews).slice(0, 4);
+  const shuffledReviews2 = shuffleArray(reviews).slice(0, 4);
 
 
   function createReviewItems(element) {
@@ -89,8 +89,8 @@ export default function Connect() {
           </div>
 
 
-          <a id="bajar" href="#reviews"><svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-arrow-down" width="50"
-            height="50" viewBox="0 0 24 24" strokeWidth="2" stroke="#000000" fill="none"
+          <a id="bajar" href="#reviews" className="bg-red-500 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-arrow-down" width="50"
+            height="50" viewBox="0 0 24 24" strokeWidth="2" stroke="#FFFFFF" fill="none"
             strokeLinecap="round" strokeLinejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path d="M12 5l0 14" />
@@ -108,7 +108,7 @@ export default function Connect() {
       <div className="container flex flex-col items-center justify-center mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly lg:px-10">
         {shuffledReviews2.map((review) => createReviewItems(review))}
       </div >
-      <div className="items-center justify-center p-5 flex-shrink-0 hidden lg:flex">
+      <div className="items-center justify-center p-5 flex-shrink-0 flex">
         <button className="px-8 py-3 font-semibold rounded dark:bg-red-600 dark:text-gray-50" onClick={openModal}>Add Review</button>
       </div>
 

@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import { Toast } from 'primereact/toast';
 
+//Another component with a modal, that handles the different cases of use with toast, and if correct stores in the localstorage an authtoken that is useful in the rest of the page.
+
 function LoginModal({ onClose }) {
     const toast = useRef(null);
     const [username, setUsername] = useState("");

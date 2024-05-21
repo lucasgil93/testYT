@@ -1,6 +1,8 @@
 import React from "react"
 import img from "../assets/pexels-itfeelslikefilm-590478.jpg"
 
+//Small component with a picture, and some text to show some info about the restaurant.
+
 function AboutItem() {
     return <>
         <section>

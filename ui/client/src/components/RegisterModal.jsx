@@ -1,6 +1,11 @@
 import React, { useState, useRef } from "react";
 import { Toast } from 'primereact/toast';
 
+
+//Another component with a modal, that handles the different cases of use with toast, 
+//and if correct stores the new user on the database with the password encrypted (done via a library on the backend).
+
+
 function RegisterModal({ onClose }) {
     const toast = useRef(null);
     const [username, setUsername] = useState("");

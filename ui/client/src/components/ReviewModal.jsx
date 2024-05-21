@@ -1,6 +1,9 @@
 import React, { useState, useRef } from "react";
 import { Toast } from 'primereact/toast';
 
+//component that has the modal to write new reviews, and also has toast to show the handled error when submiting a review and the success, the inputs to handle the data
+//also records the succesfull review inputs into the database
+
 function ReviewModal({ onClose }) {
     const toast = useRef(null);
     const [rating, setRating] = useState(0);

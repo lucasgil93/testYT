@@ -3,6 +3,11 @@ import { useLocation } from "react-router-dom";
 import LoginModal from "./LoginModal";
 import RegisterModal from "./RegisterModal";
 
+//Navigation bar component that is present on almost every page and handles de login of user/admins to see the manage tab
+//It could also handle the register/sign up function but its commented on time being.
+//So this page also handles the opening and closing of the modal components that are being imported
+//And the main function of the navbar is to link to the other pages of the website as it does and highlights the current page in red.
+
 function Navbar() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);

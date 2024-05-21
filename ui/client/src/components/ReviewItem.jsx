@@ -1,5 +1,8 @@
 import React from "react";
 
+
+//This component are the little card that hold each review made by the customers. Getting as props the name rating and text of each review
+
 function ReviewItem(props) {
 
     return (<div className="flex flex-col max-w-xs mx-4 my-6 shadow-lg">

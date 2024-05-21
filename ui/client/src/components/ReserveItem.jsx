@@ -130,7 +130,7 @@ function ReserveItem() {
         <section className="p-6 dark:bg-slate-300 dark:text-gray-800">
             <Toast ref={toast} />
             <div className="container grid gap-6 mx-auto text-center lg:grid-cols-2 xl:grid-cols-5">
-                <div className="w-full pt-3 pb-1 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 dark:bg-gray-200">
+                <div className="w-full pt-3 pb-3 px-4 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 dark:bg-gray-200">
                     <h2 className="text-5xl font-extrabold dark:text-gray-900 pt-5 pb-8">Make your reservation</h2>
                     <form noValidate className="self-stretch space-y-3">
                         <div>

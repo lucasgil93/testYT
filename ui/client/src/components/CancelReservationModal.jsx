@@ -1,13 +1,21 @@
 import React, { useState, useRef } from "react";
 import { Toast } from 'primereact/toast';
 
+//Component that houses the modal for cancelling a reserve. If the reservationId code is correct the reserve will be cancelled otherwise it wont. 
+//Also has a button to close the modal
+
 function CancelReservationModal({ onClose }) {
     const toast = useRef(null);
     const [cancelId, setCancelId] = useState("");
 
+    //Enviroment url
+
     const API_URL = "http://localhost:5038/";
 
     const handleCancel = async () => {
+
+        //method for the toast to show properly (toast from prime react)
+
         const showWarn = (msg) => {
             toast.current.show({ severity: 'warn', summary: 'Warning', detail: msg, life: 3000 });
         }
@@ -22,6 +30,9 @@ function CancelReservationModal({ onClose }) {
             showWarn('Please enter the reservation ID');
             return;
         }
+
+        /*Async call to the server to try and delete the entry of the reserve that matches the reservationId if the action is done 
+        correctly deletes the register shows a success modal and closes the modal, if not shows the error in a modal.*/
 
         try {
             const response = await fetch(API_URL + `api/project/DeleteReserve?reservationId=${cancelId}`, {
@@ -45,6 +56,9 @@ function CancelReservationModal({ onClose }) {
 
 
     };
+
+    //Body of the Modal, with a toast component to display the toast elements when needed.
+    //It has an input that handles the text for the reservationId and a button to submit and a text to exit the modal.
 
     return (
         <>

@@ -1,6 +1,9 @@
 import React from "react"
 import img from "../assets/pexels-pixabay-271715.jpg"
 
+
+//A small component with some more info about the restaurant displayed in a different manner
+
 function AboutPhilo() {
     return (
         <>

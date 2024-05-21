@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
-import { InputText } from 'primereact/inputtext';
-import { InputNumber } from 'primereact/inputnumber';
+
+//Component to show the data coming from props (database data) in a table manner for the employees and admins of the page to see it more clearly and easily
 
 const API_URL = "http://localhost:5038/";
 
@@ -17,6 +17,7 @@ export default function DataTableData(props) {
         header: field.charAt(0).toUpperCase() + field.slice(1) // Capitalizing the first letter of field as header
     }));
 
+    //Here we have the table with the data being fed to it and the columns iterate said data taking into account the header as titles of the datatable and fields for the data in each row.
     return (
         <div className="card p-fluid m-6 text-center">
             <DataTable value={props.data} editMode="cell" className='bg-slate-200 border-black border-2 text-center' tableStyle={{ minWidth: '50rem' }}>
