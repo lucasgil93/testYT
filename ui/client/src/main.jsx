@@ -9,6 +9,7 @@ import About from "./routes/about";
 import Reserve from "./routes/reserve";
 import Connect from "./routes/connect";
 import Manage from "./routes/manage"
+import Order from "./routes/order";
 
 //This file handles the routing of pages in react with the paths being the relative urls and the elements connecting the imported components to said urls
 //Also handles the error page in case a route is poorly done.
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   {
     path: "manage",
     element: <Manage />,
+  },
+  {
+    path: "order",
+    element: <Order/>
   }
 ]);
 

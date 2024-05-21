@@ -91,7 +91,7 @@ function Manage() {
                     <DataTableData data={desserts} />
                 </TabPanel>
             </Tabs>
-            <Footer/>
+            <Footer />
 
         </>
     );

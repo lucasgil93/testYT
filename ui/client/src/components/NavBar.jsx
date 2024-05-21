@@ -13,13 +13,13 @@ function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isRegisterOpen, setIsRegisterOpen] = useState(false);
     const location = useLocation();
-    
+
     const openModal = () => { setIsModalOpen(true); };
     const closeModal = () => { setIsModalOpen(false); };
     const toggleMenu = () => { setIsMenuOpen(!isMenuOpen); };
     const openRegister = () => setIsRegisterOpen(true);
     const closeRegister = () => setIsRegisterOpen(false);
-    
+
     const isActive = (path) => location.pathname === path ? "dark:text-red-600 dark:border-red-600" : "dark:border-";
 
     return (
@@ -55,15 +55,34 @@ function Navbar() {
                                 <a rel="noopener noreferrer" href="/reviews" className={`flex items-center px-4 -mb-1 border-b-2 ${isActive('/reviews')}`}>REVIEWS</a>
                             </li>
                             {localStorage.token && (
-                                 <li className="flex">
-                                 <a rel="noopener noreferrer" href="/manage" className={`flex items-center px-4 -mb-1 border-b-2 ${isActive('/manage')}`}>MANAGE</a>
-                             </li>
+                                <li className="flex">
+                                    <a rel="noopener noreferrer" href="/manage" className={`flex items-center px-4 -mb-1 border-b-2 ${isActive('/manage')}`}>MANAGE</a>
+                                </li>
+                            )}
+                            {localStorage.token && (
+                                <li className="flex">
+                                    <a rel="noopener noreferrer" href="/order" className={`flex items-center px-4 -mb-1 border-b-2 ${isActive('/order')}`}>ORDER</a>
+                                </li>
                             )}
                         </ul>
                     </div>
                     <div className="items-center flex-shrink-0 hidden lg:flex">
                         <button onClick={openModal} className="px-8 py-3 mx-2 font-semibold rounded dark:bg-red-600 dark:text-gray-50">Log in</button>
                         {/*<button onClick={openRegister} className="px-8 py-3 font-semibold rounded dark:bg-red-600 dark:text-gray-50">Sign Up</button>*/}
+                        {localStorage.getItem('token') && (
+                            <button
+                                className="px-8 py-3 mx-2 font-semibold rounded dark:bg-slate-600 dark:text-gray-50"
+                                onClick={() => {
+                                    localStorage.removeItem('token');
+                                    // Optionally, you can add more actions after removing the token
+                                    // For example, redirecting the user, updating state, etc.
+                                    window.location.reload(); // To refresh the page or update the component state
+                                }}
+                            >
+                                Log Out
+                            </button>
+                        )}
+
                     </div>
                     <button className="p-4 lg:hidden" onClick={toggleMenu}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 dark:text-gray-800">
