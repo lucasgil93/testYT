@@ -11,7 +11,7 @@ export default function OrderItem({ item, addToCart }) {
         <p className="font-extrabold text-gray-900 text-xl">{price}€</p>
         <button
           type="button"
-          className="bg-black text-white p-2 rounded-md"
+          className="bg-slate-700 text-white p-2 rounded-md hover:bg-green-500"
           onClick={() => addToCart(item)}
         >
           Add to Cart

@@ -67,11 +67,11 @@ function Navbar() {
                         </ul>
                     </div>
                     <div className="items-center flex-shrink-0 hidden lg:flex">
-                        <button onClick={openModal} className="px-8 py-3 mx-2 font-semibold rounded dark:bg-red-600 dark:text-gray-50">Log in</button>
+                        <button onClick={openModal} className="px-8 py-3 mx-2 font-semibold rounded dark:bg-red-600 dark:text-gray-50 hover:bg-red-900">Log in</button>
                         {/*<button onClick={openRegister} className="px-8 py-3 font-semibold rounded dark:bg-red-600 dark:text-gray-50">Sign Up</button>*/}
                         {localStorage.getItem('token') && (
                             <button
-                                className="px-8 py-3 mx-2 font-semibold rounded dark:bg-slate-600 dark:text-gray-50"
+                                className="px-8 py-3 mx-2 font-semibold rounded dark:bg-slate-600 dark:text-gray-50 hover:bg-slate-900"
                                 onClick={() => {
                                     localStorage.removeItem('token');
                                     // Optionally, you can add more actions after removing the token
