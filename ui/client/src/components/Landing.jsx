@@ -79,7 +79,7 @@ function Landing() {
                     backgroundBlendMode: 'multiply'
                 }}>
 
-                    <h2 className="text-white uppercase text-4xl font-bold m-10 p-2 hover:bg-white hover:text-black transition-colors duration-300">ABOUT</h2>
+                    <h2 className="text-white uppercase text-4xl font-bold m-10 p-2 hover:bg-white hover:text-black transition-colors duration-300">ABOUT US</h2>
                 </div ></a><a href="reviews">
                 <div className="divImpar h-[50vh] bg-gray-100 flex flex-col items-end justify-center" style={{
                     backgroundColor: '#D32F2F',
