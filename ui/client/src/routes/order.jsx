@@ -146,6 +146,7 @@ function Order() {
   }
 
   function clearCart() {
+    showWarn("Order emptied.")
     setCart([]);
   }
 
