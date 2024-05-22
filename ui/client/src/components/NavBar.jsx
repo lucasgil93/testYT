@@ -105,10 +105,33 @@ function Navbar() {
                             <li className="flex">
                                 <a rel="noopener noreferrer" href="/reviews" className={`flex items-center px-4 -mb-1 border-b-2 ${isActive('/reviews')}`}>REVIEWS</a>
                             </li>
+                            {localStorage.getItem("token") && (
+                                <li className="flex">
+                                    <a rel="noopener noreferrer" href="/manage" className={`flex items-center px-4 -mb-1 border-b-2 ${isActive('/manage')}`}>MANAGE</a>
+                                </li>
+                            )}
+                            {localStorage.getItem("token") && (
+                                <li className="flex">
+                                    <a rel="noopener noreferrer" href="/order" className={`flex items-center px-4 -mb-1 border-b-2 ${isActive('/order')}`}>ORDER</a>
+                                </li>
+                            )}
                             <li className="flex">
                                 <button onClick={openModal} className="w-full px-8 py-3 font-semibold rounded my-2 dark:bg-red-600 dark:text-gray-50">Log in</button>
                                 {/*<button onClick={openRegister} className="w-full px-8 py-3 font-semibold rounded dark:bg-red-600 dark:text-gray-50">Sign Up</button>*/}
                             </li>
+                            {localStorage.getItem('token') && (
+                            <button
+                                className="w-full px-8 py-3 font-semibold rounded my-2 dark:bg-slate-600 dark:text-gray-50"
+                                onClick={() => {
+                                    localStorage.removeItem('token');
+                                    // Optionally, you can add more actions after removing the token
+                                    // For example, redirecting the user, updating state, etc.
+                                    window.location.reload(); // To refresh the page or update the component state
+                                }}
+                            >
+                                Log Out
+                            </button>
+                        )}
                         </ul>
                     </div>
                 )}

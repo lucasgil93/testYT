@@ -40,6 +40,7 @@ function CancelReservationModal({ onClose }) {
             });
 
             if (response.ok) {
+                window.confirm("Your reservation is about to be cancelled, are you sure?");
                 showSuccess('Reservation canceled successfully');
                 setCancelId("");
                 setTimeout(() => {

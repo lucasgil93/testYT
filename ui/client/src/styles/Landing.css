@@ -52,22 +52,24 @@ h2 {
 }
 
 .p-toast-message-warn {
+  margin-top: 1rem;
   background-color: orange;
-  opacity: 75%;
+  opacity: 60%;
   padding: 1rem;
   border-radius: 10px;
   color: black;
 }
 
 .p-toast-message-success {
+  margin-top: 1rem;
   background-color: green;
   opacity: 75%;
   padding: 1rem;
   border-radius: 10px;
   color: white;
 }
-
 .p-toast-message-error {
+  margin-top: 1rem;
   background-color: red;
   opacity: 75%;
   padding: 1rem;
@@ -81,4 +83,5 @@ h2 {
 
 .p-toast-message-icon {
   margin-right: 10px;
+  margin-top: 20px;
 }
