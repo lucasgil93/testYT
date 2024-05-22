@@ -116,6 +116,7 @@ function Order() {
   }
 
   function removeFromCart(id) {
+    showError("Removed from order.")
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   }
 
@@ -129,6 +130,7 @@ function Order() {
       }
       return item;
     });
+    showWarn(" -1 ")
     setCart(updatedCart);
   }
 
@@ -142,6 +144,7 @@ function Order() {
       }
       return item;
     });
+    showSuccess(" +1 ")
     setCart(updatedCart);
   }
 
