@@ -50,8 +50,8 @@ export default function Connect() {
   };
 
   // Assuming 'reviews' is your array of reviews
-  const shuffledReviews1 = shuffleArray(reviews).slice(0, 4);
-  const shuffledReviews2 = shuffleArray(reviews).slice(0, 4);
+  const shuffledReviews1 = shuffleArray(reviews).slice(0, 3);
+  const shuffledReviews2 = shuffleArray(reviews).slice(0, 3);
 
 
   function createReviewItems(element) {
