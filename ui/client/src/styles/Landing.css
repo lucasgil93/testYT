@@ -85,3 +85,37 @@ h2 {
   margin-right: 10px;
   margin-top: 20px;
 }
+.p-paginator{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+.p-dropdown{
+  background-color: white;
+  border-radius: 25px;
+  padding: 0.2rem;
+  margin: 0.3rem
+}
+.p-dropdown-item{
+  background-color: white;
+  padding: 0.4rem;
+  border: 1px solid lightblue
+}
+
+span .p-paginator-element{
+  margin-inline: 1rem;
+  background-color: lightgoldenrodyellow;
+  padding-inline: 1rem;
+  border-radius: 25px;
+  margin-block: 0.5rem;
+}
+
+.p-paginator-element{
+  margin-inline: 0.5rem;
+
+}
+.p-paginator-element:hover{
+
+  background-color: lightyellow;
+
+}
