@@ -6,19 +6,13 @@ var bodyParser = require("body-parser");
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcrypt");
 
-//Everything we need for the backend to work.
-
 var app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-//Enviroment variables to make work easier
-
 var CONNECTION_STRING = "mongodb+srv://lucasgildominguez:lucasgildominguez@cluster.pwxbaqr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster";
 var DATABASENAME = "project";
 var database;
-
-//Connection with DB (Executed with in terminal with {node index.js})
 
 app.listen(5038, () => {
     MongoClient.connect(CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true }, (error, client) => {
@@ -27,8 +21,6 @@ app.listen(5038, () => {
         console.log("MongoDB successful connection");
     });
 });
-
-//Login call to server
 
 app.post('/api/login', async (req, res) => {
     const { username, password } = req.body;
@@ -46,9 +38,6 @@ app.post('/api/login', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
-
-
-// Registration route
 
 app.post('/api/register', async (req, res) => {
     const { username, password } = req.body;
@@ -69,73 +58,58 @@ app.post('/api/register', async (req, res) => {
     }
 });
 
-//Api to get all the meals data
-
 app.get('/api/project/GetMeals', (request, response) => {
     database.collection("meals").find({}).toArray((error, result) => {
         response.send(result);
     })
-})
-
-//Api to get all the drinks data
+});
 
 app.get('/api/project/GetDrinks', (request, response) => {
     database.collection("beverages").find({}).toArray((error, result) => {
         response.send(result);
     })
-})
-
-//Api to get the desserts data
+});
 
 app.get('/api/project/GetDesserts', (request, response) => {
     database.collection("dessert").find({}).toArray((error, result) => {
         response.send(result);
     })
-})
-
-//Api to get the appetizers data
+});
 
 app.get('/api/project/GetApps', (request, response) => {
     database.collection("appetizers").find({}).toArray((error, result) => {
         response.send(result);
     })
-})
-
-//Api to get all the reviews
+});
 
 app.get('/api/project/GetReviews', (request, response) => {
     database.collection("reviews").find({}).toArray((error, result) => {
         response.send(result);
     })
-})
-
-//Api to add a new review with all the fields and adding an identifier that relates to the number of reviews done.
+});
 
 app.post('/api/project/AddReview', multer().none(), (request, response) => {
-    database.collection("reviews").count({}, function (error, numOfDocs) {
+    database.collection("reviews").countDocuments({}, function (error, numOfDocs) {
         database.collection("reviews").insertOne({
             id: (numOfDocs + 1),
             name: request.body.name,
             text: request.body.text,
             rating: request.body.rating,
-            created: request.body.created
+            created: request.body.created,
+            type: "review"
         });
-        response.json("Added Review Succesfully");
+        response.json("Added Review Successfully");
     })
-})
-
-//Api to get all the reserves data.
+});
 
 app.get('/api/project/GetReserves', (request, response) => {
     database.collection("reserves").find({}).toArray((error, result) => {
         response.send(result);
     })
-})
-
-//Api to add a new reservation with an id for the number of reserve and the rest of the fields that must be filled.
+});
 
 app.post('/api/project/AddReserve', multer().none(), (request, response) => {
-    database.collection("reserves").count({}, function (error, numOfDocs) {
+    database.collection("reserves").countDocuments({}, function (error, numOfDocs) {
         database.collection("reserves").insertOne({
             id: (numOfDocs + 1),
             name: request.body.name,
@@ -143,38 +117,31 @@ app.post('/api/project/AddReserve', multer().none(), (request, response) => {
             time: request.body.time,
             numberGuests: request.body.numberGuests,
             reservationId: request.body.reservationId,
-            created: request.body.created
+            created: request.body.created,
+            type: "reserve"
         });
         response.json("Added Reserve Successfully");
     })
 });
 
-
-//Api to get all the orders data.
-
 app.get('/api/project/GetOrders', (request, response) => {
     database.collection("orders").find({}).toArray((error, result) => {
         response.send(result);
     })
-})
-
-
-
-//Api to add a order created via the order tab by a employee of the restaurant // we parse the json data thats been stringyfied in the frontend for proper storage
+});
 
 app.post('/api/project/AddOrder', multer().none(), (request, response) => {
-    database.collection("orders").count({}, function (error, numOfDocs) {
+    database.collection("orders").countDocuments({}, function (error, numOfDocs) {
         database.collection("orders").insertOne({
             id: (numOfDocs + 1),
             cart: JSON.parse(request.body.cart),
             totalPrice: request.body.totalPrice,
-            created: request.body.created
+            created: request.body.created,
+            type: "order"
         });
         response.json("Added Order Successfully");
     })
 });
-
-//Api to delete a reserve that searches for the reservationId code thats given to the customer to save if he/she/them wants to cancel the reservation
 
 app.delete('/api/project/DeleteReserve', (request, response) => {
     const reservationId = request.query.reservationId;
@@ -193,5 +160,125 @@ app.delete('/api/project/DeleteReserve', (request, response) => {
         }
 
         response.json("Reservation Deleted Successfully");
+    });
+});
+
+app.delete('/api/project/DeleteReview', (request, response) => {
+    const reviewId = parseInt(request.query.id);
+
+    if (!reviewId) {
+        return response.status(400).json({ error: "Review ID is required" });
+    }
+
+    database.collection("reviews").deleteOne({ id: reviewId }, (error, result) => {
+        if (error) {
+            return response.status(500).json({ error: "Failed to delete the review" });
+        }
+
+        if (result.deletedCount === 0) {
+            return response.status(404).json({ error: "Review not found" });
+        }
+
+        response.json("Review Deleted Successfully");
+    });
+});
+
+app.delete('/api/project/DeleteOrder', (request, response) => {
+    const orderId = parseInt(request.query.id);
+
+    if (!orderId) {
+        return response.status(400).json({ error: "Order ID is required" });
+    }
+
+    database.collection("orders").deleteOne({ id: orderId }, (error, result) => {
+        if (error) {
+            return response.status(500).json({ error: "Failed to delete the order" });
+        }
+
+        if (result.deletedCount === 0) {
+            return response.status(404).json({ error: "Order not found" });
+        }
+
+        response.json("Order Deleted Successfully");
+    });
+});
+
+app.delete('/api/project/DeleteMeal', (request, response) => {
+    const mealId = parseInt(request.query.id);
+
+    if (!mealId) {
+        return response.status(400).json({ error: "Meal ID is required" });
+    }
+
+    database.collection("meals").deleteOne({ id: mealId }, (error, result) => {
+        if (error) {
+            return response.status(500).json({ error: "Failed to delete the meal" });
+        }
+
+        if (result.deletedCount === 0) {
+            return response.status(404).json({ error: "Meal not found" });
+        }
+
+        response.json("Meal Deleted Successfully");
+    });
+});
+
+app.delete('/api/project/DeleteDrink', (request, response) => {
+    const drinkId = parseInt(request.query.id);
+
+    if (!drinkId) {
+        return response.status(400).json({ error: "Drink ID is required" });
+    }
+
+    database.collection("beverages").deleteOne({ id: drinkId }, (error, result) => {
+        if (error) {
+            return response.status(500).json({ error: "Failed to delete the drink" });
+        }
+
+        if (result.deletedCount === 0) {
+            return response.status(404).json({ error: "Drink not found" });
+        }
+
+        response.json("Drink Deleted Successfully");
+    });
+});
+
+app.delete('/api/project/DeleteDessert', (request, response) => {
+    const dessertId = parseInt(request.query.id);
+
+    if (!dessertId) {
+        return response.status(400).json({ error: "Dessert ID is required" });
+    }
+
+    database.collection("dessert").deleteOne({ id: dessertId }, (error, result) => {
+        if (error) {
+            return response.status(500).json({ error: "Failed to delete the dessert" });
+        }
+
+        if (result.deletedCount === 0) {
+            return response.status(404).json({ error: "Dessert not found" });
+        }
+
+        response.json("Dessert Deleted Successfully");
+    });
+});
+
+app.delete('/api/project/DeleteApp', (request, response) => {
+    const appId = parseInt(request.query.id);
+
+    if (!appId) {
+        return response.status(400).json({ error: "Appetizer ID is required" });
+    }
+
+    database.collection("appetizers").deleteOne({ id: appId }, (error, result) => {
+        if (error) {
+            return response.status(500).json({ error: "Failed to delete the appetizer" });
+        }
+
+        if (result.deletedCount === 0) {
+            return response.status(404).json({ error: "Appetizer not found" });
+        }
+
+        response.json("Appetizer Deleted Successfully");
     });
 });
