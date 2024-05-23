@@ -12,6 +12,7 @@ function ReserveItem() {
         numberOfPersons: "",
         reservationId: "",
         created: "",
+        email: "",
     });
     const [isCancelModalOpen, setCancelModalOpen] = useState(false);
 
@@ -44,7 +45,7 @@ function ReserveItem() {
     const timeIntervals = generateTimeIntervals(openingTime, closingTime, 30); // 30-minute intervals
 
     const handleSubmit = async () => {
-        const { name, date, time, numberOfPersons } = formData;
+        const { name, date, time, numberOfPersons, email} = formData;
         const reservationId = generateId();
         const created = new Date();
 
@@ -82,6 +83,7 @@ function ReserveItem() {
         data.append("numberGuests", numberOfPersons);
         data.append("reservationId", reservationId);
         data.append("created", created);
+        data.append("email", email)
 
         console.log("FormData entries:", Array.from(data.entries()));  // Log the formData to ensure reservationId is included
 
@@ -100,6 +102,7 @@ function ReserveItem() {
                     numberOfPersons: "",
                     reservationId: "",
                     created: "",
+                    email: "",
                 });
                 showSuccess(`Reservation made successfully. Your reservation ID is ${reservationId}`);
             } else {
@@ -129,9 +132,9 @@ function ReserveItem() {
     return (
         <section className="p-6 dark:bg-slate-300 dark:text-gray-800">
             <Toast ref={toast} />
-            <div className="container grid gap-6 mx-auto text-center lg:grid-cols-2 xl:grid-cols-5">
+            <div className="container grid gap-6 mx-auto text-center px-2 lg:grid-cols-2 xl:grid-cols-5">
                 <div className="w-full pt-3 pb-3 px-4 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 dark:bg-gray-200">
-                    <h2 className="text-5xl font-extrabold dark:text-gray-900 pt-5 pb-8">Make your reservation</h2>
+                    <h2 className="text-2xl font-extrabold dark:text-gray-900 pt-5 pb-8">Make your reservation</h2>
                     <form noValidate className="self-stretch space-y-3">
                         <div>
                             <label htmlFor="name" className="text-sm sr-only">Your name</label>
@@ -141,6 +144,17 @@ function ReserveItem() {
                                 placeholder="Your name"
                                 className="w-full h-10 p-2 rounded-md focus:ring focus:dark:ring-red-600 dark:border-gray-300"
                                 value={formData.name}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="email" className="text-sm sr-only">Your email</label>
+                            <input
+                                id="email"
+                                type="email"
+                                placeholder="Your email"
+                                className="w-full h-10 p-2 rounded-md focus:ring focus:dark:ring-red-600 dark:border-gray-300"
+                                value={formData.email}
                                 onChange={handleChange}
                             />
                         </div>

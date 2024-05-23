@@ -118,6 +118,7 @@ app.post('/api/project/AddReserve', multer().none(), (request, response) => {
             numberGuests: request.body.numberGuests,
             reservationId: request.body.reservationId,
             created: request.body.created,
+            email: request.body.email,
             type: "reserve"
         });
         response.json("Added Reserve Successfully");
