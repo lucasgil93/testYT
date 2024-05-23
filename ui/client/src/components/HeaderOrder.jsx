@@ -129,13 +129,13 @@ export default function HeaderOrder({
                 )}
 
                 <button
-                  className="bg-green-500 text-white w-full mt-3 p-2"
+                  className="bg-green-500 hover:bg-green-700 text-white w-full mt-3 p-2"
                   onClick={saveOrder}
                 >
                   Order
                 </button>
                 <button
-                  className="bg-black text-white w-full mt-3 p-2"
+                  className="bg-black hover:bg-gray-500 text-white w-full mt-3 p-2"
                   onClick={clearCart}
                 >
                   Empty Cart
