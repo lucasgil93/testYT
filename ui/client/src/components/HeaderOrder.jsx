@@ -74,7 +74,7 @@ export default function HeaderOrder({
 
               <div id="carrito" className="w-full bg-white p-3 shadow-lg rounded-lg z-10">
                 {isEmpty ? (
-                  <p className="text-center">Cart is Empty</p>
+                  <p className="text-center">Order is Empty</p>
                 ) : (
                   <>
                     <table className="w-full table-auto">
@@ -138,7 +138,7 @@ export default function HeaderOrder({
                   className="bg-black hover:bg-gray-500 text-white w-full mt-3 p-2"
                   onClick={clearCart}
                 >
-                  Empty Cart
+                  Empty Order
                 </button>
               </div>
 

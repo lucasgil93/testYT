@@ -162,7 +162,7 @@ function Order() {
 
       <Tabs className="m-2">
         <TabList>
-          <Tab>Cart</Tab>
+          <Tab>Current Order</Tab>
           <Tab>Meals</Tab>
           <Tab>Desserts</Tab>
           <Tab>Appetizers</Tab>
