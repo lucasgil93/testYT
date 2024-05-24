@@ -13,9 +13,16 @@ export default function DataTableData(props) {
     setData(props.data);
   }, [props.data]);
 
-  const fields = data.length > 0 ? Object.keys(data[0]).filter(
-    (field) => field !== "_id" && field !== "image" && field !== "tags" && field != "type"
-  ) : [];
+  const fields =
+    data.length > 0
+      ? Object.keys(data[0]).filter(
+          (field) =>
+            field !== "_id" &&
+            field !== "image" &&
+            field !== "tags" &&
+            field != "type"
+        )
+      : [];
 
   const columns = fields.map((field) => ({
     field: field,
@@ -48,26 +55,54 @@ export default function DataTableData(props) {
           endpoint = `DeleteApp?id=${rowData.id}`;
           break;
         default:
-          toast.current.show({ severity: 'warn', summary: 'Warning', detail: `${rowData.id} cannot be deleted`, life: 3000 });
+          toast.current.show({
+            severity: "warn",
+            summary: "Warning",
+            detail: `${rowData.id} cannot be deleted`,
+            life: 3000,
+          });
           return;
       }
     } else {
-      toast.current.show({ severity: 'warn', summary: 'Warning', detail: 'Item not found', life: 3000 });
+      toast.current.show({
+        severity: "warn",
+        summary: "Warning",
+        detail: "Item not found",
+        life: 3000,
+      });
       return;
     }
 
     try {
       const response = await fetch(`${API_URL}api/project/${endpoint}`, {
-        method: 'DELETE',
+        method: "DELETE",
       });
-
-      if (!response.ok) {
-        toast.current.show({ severity: 'error', summary: 'Error', detail: 'Failed to delete item', life: 3000 });
-        throw new Error('Failed to delete item');
+      if (window.confirm("Are you sure you want to delete this item?")) {
+        if (!response.ok) {
+          toast.current.show({
+            severity: "error",
+            summary: "Error",
+            detail: "Failed to delete item",
+            life: 3000,
+          });
+          throw new Error("Failed to delete item");
+        } else {
+          setData(data.filter((item) => item !== rowData));
+          toast.current.show({
+            severity: "success",
+            summary: "Success",
+            detail: "Item deleted successfully",
+            life: 3000,
+          });
+        }
+      } else {
+        toast.current.show({
+          severity: "info",
+          summary: "Cancelled",
+          detail: "Item deletion cancelled",
+          life: 3000,
+        });
       }
-
-      setData(data.filter((item) => item !== rowData));
-      toast.current.show({ severity: 'success', summary: 'Success', detail: 'Item deleted successfully', life: 3000 });
     } catch (error) {
       console.error("Failed to delete item:", error);
     }
@@ -78,9 +113,15 @@ export default function DataTableData(props) {
       <button
         onClick={() => handleDelete(rowData)}
         className="p-button p-component p-button-danger"
-        style={{ color: 'white', backgroundColor: '#d9534f', borderRadius: '5px', border: 'none', padding: '5px 10px' }}
-        onMouseEnter={(e) => (e.target.style.backgroundColor = '#c9302c')}
-        onMouseLeave={(e) => (e.target.style.backgroundColor = '#d9534f')}
+        style={{
+          color: "white",
+          backgroundColor: "#d9534f",
+          borderRadius: "5px",
+          border: "none",
+          padding: "5px 10px",
+        }}
+        onMouseEnter={(e) => (e.target.style.backgroundColor = "#c9302c")}
+        onMouseLeave={(e) => (e.target.style.backgroundColor = "#d9534f")}
       >
         Delete
       </button>
