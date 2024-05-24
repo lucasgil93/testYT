@@ -80,10 +80,11 @@ export default function DataTableData(props) {
     }
 
     try {
-      const response = await fetch(`${API_URL}api/project/${endpoint}`, {
-        method: "DELETE",
-      });
       if (window.confirm("Are you sure you want to delete this item?")) {
+        const response = await fetch(`${API_URL}api/project/${endpoint}`, {
+          method: "DELETE",
+        });
+
         if (!response.ok) {
           toast.current.show({
             severity: "error",
@@ -121,7 +122,8 @@ export default function DataTableData(props) {
     } catch (error) {
       console.error("Failed to delete item:", error);
     }
-  };
+
+  }
 
   const handleEdit = (rowData) => {
     setFormValues(rowData);

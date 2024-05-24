@@ -173,7 +173,7 @@ function ReserveItem() {
                             <label htmlFor="time" className="text-sm sr-only">Time</label>
                             <select
                                 id="time"
-                                className="w-full h-10 p-2 rounded-md focus:ring focus:dark:ring-red-600 dark:border-gray-300"
+                                className="w-full h-10 p-2 rounded-md focus:ring focus:dark:ring-red-600 dark:bg-white dark:border-gray-100"
                                 value={formData.time}
                                 onChange={handleChange}
                             >

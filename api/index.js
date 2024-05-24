@@ -283,3 +283,32 @@ app.delete('/api/project/DeleteApp', (request, response) => {
         response.json("Appetizer Deleted Successfully");
     });
 });
+
+// Endpoint to handle item updates
+app.put('/api/project/UpdateItem', (request, response) => {
+    const updatedItem = request.body;
+
+    // Assuming your updated item has an _id field to identify it uniquely
+    const itemId = updatedItem._id;
+
+    if (!itemId) {
+        return response.status(400).json({ error: "Item ID is required" });
+    }
+
+    // Update the item in the database
+    database.collection("your_collection_name").updateOne(
+        { _id: itemId },
+        { $set: updatedItem },
+        (error, result) => {
+            if (error) {
+                return response.status(500).json({ error: "Failed to update item" });
+            }
+
+            if (result.matchedCount === 0) {
+                return response.status(404).json({ error: "Item not found" });
+            }
+
+            response.json("Item Updated Successfully");
+        }
+    );
+});

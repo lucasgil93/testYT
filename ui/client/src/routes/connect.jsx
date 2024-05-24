@@ -111,9 +111,15 @@ export default function Connect() {
       <div className="container flex flex-col items-center justify-center mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly lg:px-10">
         {shuffledReviews2.map((review) => createReviewItems(review))}
       </div >
-      <div className="items-center justify-center p-5 flex-shrink-0 flex">
-        <button className="px-8 py-3 font-semibold rounded dark:bg-red-600 hover:bg-red-800 dark:text-gray-50" onClick={openModal}>Write a review</button>
-      </div>
+
+
+      <section className="py-6 bg-red-600 text-gray-900">
+        <div className="container mx-auto flex flex-col items-center justify-center p-4 space-y-8 md:p-10 lg:space-y-0 lg:flex-row lg:justify-between">
+          <h1 className="text-5xl font-semibold leading-tight text-center text-white lg:text-left"> Let us know your opinion! </h1>
+          <button className="px-8 py-3 font-semibold rounded dark:bg-gray-100 hover:bg-gray-400 dark:text-black" onClick={openModal}>Write a review</button>
+        </div>
+      </section>
+
 
 
       <Footer></Footer>
