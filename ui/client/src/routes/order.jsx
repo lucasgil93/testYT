@@ -23,7 +23,7 @@ function Order() {
   const [cart, setCart] = useState(initialCart);
 
   const MIN_ITEMS = 1;
-  const MAX_ITEMS = 8;
+  const MAX_ITEMS = 10;
 
   let API_URL = "http://localhost:5038/";
 
@@ -147,6 +147,7 @@ function Order() {
     showSuccess(" +1 ")
     setCart(updatedCart);
   }
+  
 
   function clearCart() {
     showWarn("Order emptied.")
@@ -156,7 +157,7 @@ function Order() {
   return (
     <>
       <Toast ref={toast} />
-      {!localStorage.token && (window.history.back(), window.close())}
+      {!localStorage.token && (window.location.href = "/")}
       <Navbar />
 
       <Tabs className="m-2">

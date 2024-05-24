@@ -56,8 +56,7 @@ function Manage() {
     return (
         <>
             {!localStorage.token && (
-                window.history.back(),
-                window.close()
+                window.location.href = "/"
             )}
             <Navbar />
             <Tabs className="m-2">

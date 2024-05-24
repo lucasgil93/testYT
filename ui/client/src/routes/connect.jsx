@@ -112,7 +112,7 @@ export default function Connect() {
         {shuffledReviews2.map((review) => createReviewItems(review))}
       </div >
       <div className="items-center justify-center p-5 flex-shrink-0 flex">
-        <button className="px-8 py-3 font-semibold rounded dark:bg-red-600 dark:text-gray-50" onClick={openModal}>Add Review</button>
+        <button className="px-8 py-3 font-semibold rounded dark:bg-red-600 hover:bg-red-800 dark:text-gray-50" onClick={openModal}>Write a review</button>
       </div>
 
 

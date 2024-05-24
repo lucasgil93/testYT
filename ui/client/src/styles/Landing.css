@@ -35,7 +35,7 @@ p {
   font-family: "Courier New", Courier, monospace;
 }
 
-h2 > span {
+h2>span {
   font-family: Helvetica, sans-serif;
   padding-left: 0.5rem;
 }
@@ -68,6 +68,7 @@ h2 {
   border-radius: 10px;
   color: white;
 }
+
 .p-toast-message-error {
   margin-top: 1rem;
   background-color: red;
@@ -76,6 +77,7 @@ h2 {
   border-radius: 10px;
   color: white;
 }
+
 .p-toast-message-info {
   margin-top: 1rem;
   background-color: lightseagreen;
@@ -93,37 +95,158 @@ h2 {
   margin-right: 10px;
   margin-top: 20px;
 }
-.p-paginator{
-  display:flex;
+
+.p-paginator {
+  display: flex;
   flex-direction: row;
   align-items: center;
-}
-.p-dropdown{
-  background-color: white;
-  border-radius: 25px;
-  padding: 0.2rem;
-  margin: 0.3rem
-}
-.p-dropdown-item{
-  background-color: white;
-  padding: 0.4rem;
-  border: 1px solid lightblue
-}
-
-span .p-paginator-element{
-  margin-inline: 1rem;
-  background-color: lightgoldenrodyellow;
-  padding-inline: 1rem;
-  border-radius: 25px;
-  margin-block: 0.5rem;
-}
-
-.p-paginator-element{
-  margin-inline: 0.5rem;
+  justify-content: space-around;
+  width: 25rem;
 
 }
-.p-paginator-element:hover{
+
+.p-paginator-bottom {
+  display: flex;
+  align-items: center;
+  margin-left: 38vi;
+  padding-block: 0.5rem;
+}
+
+
+.p-paginator-element:hover {
 
   background-color: lightyellow;
 
+}
+
+.p-paginator-first,
+.p-paginator-last,
+.p-paginator-next,
+.p-paginator-prev {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: 2rem;
+  padding-inline: 0.5rem;
+  border: 1px solid lightgray;
+  /* default border color */
+  border-radius: 0.375rem;
+  /* default border radius */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  /* default shadow */
+  background-color: lightgray;
+  /* default background color */
+  color: #374151;
+  /* default text color */
+  font-size: 0.875rem;
+  /* default font size */
+  font-weight: 600;
+  /* default font weight */
+}
+
+
+
+.p-dropdown {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid #e5e7eb;
+  /* default border color */
+  border-radius: 0.375rem;
+  /* default border radius */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  /* default shadow */
+  background-color: #ffffff;
+  /* default background color */
+  color: #374151;
+  /* default text color */
+  font-size: 0.875rem;
+  /* default font size */
+  font-weight: 600;
+  /* default font weight */
+}
+
+.p-dropdown-item {
+  display: column;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+  border: 1px solid #e5e7eb;
+  /* default border color */
+  border-radius: 0.375rem;
+  /* default border radius */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  /* default shadow */
+  background-color: #ffffff;
+  /* default background color */
+  color: #374151;
+  /* default text color */
+  font-size: 0.875rem;
+  /* default font size */
+  font-weight: 600;
+  /* default font weight */
+}
+
+
+
+.p-paginator-element {
+  /*display: flex;
+  flex-direction: column;*/
+  justify-content: center;
+  gap: 1rem;
+  color: #374151;
+  /* default text color */
+}
+
+span .p-paginator-element {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid #e5e7eb;
+  /* default border color */
+  border-radius: 0.375rem;
+  /* default border radius */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  /* default shadow */
+  background-color: #ffffff;
+  /* default background color */
+  color: #374151;
+  /* default text color */
+  font-size: 0.875rem;
+  /* default font size */
+  font-weight: 600;
+  /* default font weight */
+}
+
+.pagination-buttons button svg {
+  width: 1rem;
+}
+
+/* Dark Mode Styles */
+.dark .pagination-buttons {
+  color: #d1d5db;
+  /* dark mode text color */
+}
+
+.dark .pagination-buttons button {
+  border-color: #9ca3af;
+  /* dark mode border color */
+  background-color: #1f2937;
+  /* dark mode background color */
+  color: #dc2626;
+  /* dark mode text color */
+}
+
+.dark .pagination-buttons button svg {
+  stroke: #9ca3af;
+  /* dark mode SVG stroke color */
 }
