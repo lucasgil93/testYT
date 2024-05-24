@@ -49,7 +49,7 @@ h2 {
 :root {
   scroll-behavior: smooth;
   font-family: "Kanit";
-  background-color: white;
+  background-color: rgb(243, 244, 246);
 }
 
 .p-toast-message-warn {

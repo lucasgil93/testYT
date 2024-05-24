@@ -5,7 +5,7 @@ function Footer() {
 //Small footer component that repeats in almost every page and shows and links to socials (TO BE REDIRECTED TO REAL SITES - fake site so no point)
 
     return (
-        <footer className="px-4 divide-y dark:bg-gray-100 dark:text-gray-800 ">
+        <footer className=" footerel px-4 divide-y dark:bg-gray-100 dark:text-gray-800 ">
             <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
                 <div className="lg:w-1/3">
                     <a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
