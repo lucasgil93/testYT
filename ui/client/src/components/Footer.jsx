@@ -35,13 +35,13 @@ function Footer() {
                         <h3 className="tracking-wide uppercase dark:text-gray-900">Location</h3>
                         <ul className="space-y-1">
                             <li>
-                                <a rel="noopener noreferrer" href="#">C/ Fake Street nº 123</a>
+                                <a rel="noopener noreferrer" href="#">Main Street, 4, Oranmore</a>
                             </li>
                             <li>
-                                <a rel="noopener noreferrer" href="#">Galway, HK15HF</a>
+                                <a rel="noopener noreferrer" href="#">Co. Galway, H91 TXK3</a>
                             </li>
                             <li>
-                                <a rel="noopener noreferrer" href="#">086 367 6718</a>
+                                <a rel="noopener noreferrer" href="#">+35391788272</a>
                             </li>
                             <li>
                                 <a rel="noopener noreferrer" href="#">sushimaderight@sakura.com</a>
