@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Toast } from "primereact/toast";
-import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
 import { InputText } from "primereact/inputtext";
 
@@ -246,11 +245,11 @@ export default function DataTableData(props) {
               className="bg-red-50 font-light border-black border-2"
             />
           ))}
-          <Column
+         {/* <Column
             header="Edit"
             body={editColumnTemplate}
             className="bg-red-50 font-light border-black border-2"
-          />
+          />*/}
           <Column
             header="Delete"
             body={deleteColumnTemplate}
